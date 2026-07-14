@@ -1,20 +1,23 @@
 # artist-room → GitHub Pages
 
-Публичный сайт. Разработка и админка — в monorepo `bobkov-graphic-designer`.
+## Включить Pages (один раз)
 
-## Публикация
+1. **Settings → Pages**
+2. **Source: Deploy from a branch**
+3. **Branch: `gh-pages`** → папка **`/ (root)`** → **Save**
+4. Сайт: `https://yeahweretrying1.github.io/artist-room/`
 
-1. Обнови файлы в этом репо (`data/`, `public/uploads/`, код при необходимости).
-2. `git push`
-3. **Settings → Pages → Source: GitHub Actions** (один раз).
-4. Сайт: `https://yeahwereTrying1.github.io/artist-room/`
+Workflow сам собирает Next.js и пушит в ветку `gh-pages`.
 
-## Синхронизация из monorepo
+## Обновить сайт
 
-После правок в админке (локально в `bobkov-graphic-designer`):
+Пуш в `main` → Actions → зелёный run → через 1–2 мин сайт обновится.
 
-```bash
-# из monorepo — скопировать artist/ в клон artist-room и запушить
-```
+## Права Actions (один раз)
 
-Или вручную: `artist/data/`, `artist/public/uploads/` → этот репозиторий.
+**Settings → Actions → General → Workflow permissions → Read and write permissions → Save**
+
+## Разработка
+
+Monorepo `bobkov-graphic-designer` — админка и правки локально.  
+Сюда синхронизируй `data/` и `public/uploads/`.
