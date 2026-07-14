@@ -1,0 +1,42 @@
+{
+  "title": "Максим Бобков",
+  "text": "живу, рисую, коллекционирую наброски друзей и артефакты, делаю звуковые перформансы\nЧто я думаю я люблю\n\n1. Кефир с сахаром \n2. Быть одному в квартире \n3. Поцелуи \n",
+  "photos": [],
+  "logo": "/logo.svg",
+  "links": [
+    {
+      "label": "bobkov.web",
+      "href": "https://bobkov.web"
+    },
+    {
+      "label": "Telegram",
+      "href": "https://t.me/DeMaXiTo"
+    }
+  ],
+  "roomZones": [
+    {
+      "id": "zone-wall",
+      "key": "wall",
+      "label": "Стена",
+      "src": ""
+    },
+    {
+      "id": "zone-desk",
+      "key": "desk",
+      "label": "Стол",
+      "src": ""
+    },
+    {
+      "id": "zone-floor",
+      "key": "floor",
+      "label": "Пол",
+      "src": ""
+    },
+    {
+      "id": "zone-paintings",
+      "key": "paintings",
+      "label": "Картины",
+      "src": ""
+    }
+  ]
+}
