@@ -613,7 +613,7 @@
     "caseBlocks": [],
     "manualOrder": 3,
     "grid": {
-      "col": 2,
+      "col": 3,
       "colSpan": 3,
       "row": 28,
       "rowSpan": 4
@@ -659,10 +659,10 @@
     "caseBlocks": [],
     "manualOrder": 5,
     "grid": {
-      "col": 2,
-      "colSpan": 4,
+      "col": 3,
+      "colSpan": 2,
       "row": 43,
-      "rowSpan": 6
+      "rowSpan": 3
     },
     "layoutCustomized": true
   },
@@ -684,7 +684,7 @@
     "grid": {
       "col": 4,
       "colSpan": 2,
-      "row": 40,
+      "row": 39,
       "rowSpan": 2
     },
     "layoutCustomized": true
@@ -707,7 +707,7 @@
     "grid": {
       "col": 1,
       "colSpan": 2,
-      "row": 38,
+      "row": 37,
       "rowSpan": 3
     },
     "layoutCustomized": true
@@ -730,7 +730,7 @@
     "grid": {
       "col": 1,
       "colSpan": 3,
-      "row": 49,
+      "row": 47,
       "rowSpan": 4
     },
     "layoutCustomized": true
@@ -753,7 +753,7 @@
     "grid": {
       "col": 3,
       "colSpan": 3,
-      "row": 62,
+      "row": 61,
       "rowSpan": 3
     },
     "layoutCustomized": true
@@ -767,7 +767,20 @@
     "detailsEnabled": false,
     "published": true,
     "archived": false,
-    "media": [],
+    "media": [
+      {
+        "id": "787147fc-2dd1-408e-9509-2ff6ed294c47",
+        "kind": "image",
+        "src": "/uploads/ddf184ce-9bc4-4c3c-aec1-ee45f3a74632.png",
+        "caption": ""
+      },
+      {
+        "id": "a3b1b3a5-1e21-482f-a23f-bc49b041ccc0",
+        "kind": "image",
+        "src": "/uploads/756fe669-f407-44cf-bbeb-c7b25e4a84e9.png",
+        "caption": ""
+      }
+    ],
     "richText": "",
     "structuredBlocks": [],
     "projectType": "shot",
@@ -776,8 +789,52 @@
     "grid": {
       "col": 4,
       "colSpan": 4,
-      "row": 50,
+      "row": 48,
       "rowSpan": 11
+    },
+    "layoutCustomized": true
+  },
+  {
+    "id": "763c5db9-42a6-410d-8224-7b589e2ec7e7",
+    "slug": "gif-1784122590750",
+    "title": "",
+    "description": "",
+    "preview": "/uploads/41bcaf2f-3186-4a01-93d1-e25be0dbd5f4.gif",
+    "detailsEnabled": true,
+    "published": true,
+    "archived": false,
+    "media": [],
+    "richText": "",
+    "structuredBlocks": [],
+    "projectType": "shot",
+    "caseBlocks": [],
+    "grid": {
+      "col": 1,
+      "colSpan": 1,
+      "row": 59,
+      "rowSpan": 1
+    },
+    "layoutCustomized": true
+  },
+  {
+    "id": "7a9c51f1-d1ca-4436-a256-57501274dc72",
+    "slug": "плиточка-из-тбилиси",
+    "title": "плиточка из Тбилиси",
+    "description": "",
+    "preview": "/uploads/6469b704-db85-481a-a2c2-6dc2de42163a.gif",
+    "detailsEnabled": true,
+    "published": true,
+    "archived": false,
+    "media": [],
+    "richText": "",
+    "structuredBlocks": [],
+    "projectType": "shot",
+    "caseBlocks": [],
+    "grid": {
+      "col": 5,
+      "colSpan": 3,
+      "row": 65,
+      "rowSpan": 2
     },
     "layoutCustomized": true
   }

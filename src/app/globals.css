@@ -1487,7 +1487,7 @@ button:disabled {
   .artistProjectScroll {
     width: 100%;
     padding:
-      max(56px, env(safe-area-inset-top, 0px))
+      max(112px, calc(112px + env(safe-area-inset-top, 0px)))
       0
       max(50vh, 40px, env(safe-area-inset-bottom, 0px))
       0;
@@ -1667,7 +1667,7 @@ button:disabled {
 }
 
 .gridProjectMedia.isGifPreview {
-  background: #fff;
+  background: transparent;
 }
 
 .gridProjectZoomButton,

@@ -2,15 +2,14 @@
   "name": "bobkov-artist",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next dev --hostname 127.0.0.1 --port 3003 --webpack",
+    "dev": "next dev --hostname 127.0.0.1 --port 3003",
     "build": "next build",
-    "build:pages": "next build",
-    "preview:pages": "npx --yes serve out",
     "start": "next start",
     "lint": "eslint ."
   },
   "dependencies": {
     "@fontsource/google-sans": "^5.2.1",
+    "bobkov-portfolios": "file:..",
     "next": "^16.2.4",
     "react": "^19.2.5",
     "react-dom": "^19.2.5"
