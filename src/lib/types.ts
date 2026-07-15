@@ -1,3 +1,28 @@
+/** Навигация на главной: «иконки», «логотипы», «шрифты» объединены в «графика». Рубрику «зины и книги» временно убрали из меню — тег остаётся только в данных/админке. */
+export const TAGS = ["flow", "айдентика", "графика", "плакаты", "эксперименты"] as const;
+
+/** Старые теги, которые считаются рубрикой «графика» в фильтре и подписи. */
+export const GRAPHICS_GROUP_TAGS = ["графика", "иконки", "логотипы", "шрифты"] as const;
+
+export type ProjectTag =
+  | Exclude<(typeof TAGS)[number], "flow">
+  | "иконки"
+  | "логотипы"
+  | "шрифты"
+  | "зины и книги";
+
+/** Порядок тегов в админках (включая устаревшие значения для старых записей). */
+export const ADMIN_PROJECT_TAG_OPTIONS: readonly ProjectTag[] = [
+  "айдентика",
+  "графика",
+  "плакаты",
+  "эксперименты",
+  "иконки",
+  "логотипы",
+  "шрифты",
+  "зины и книги"
+];
+
 export type MediaKind = "image" | "gif" | "video";
 
 export type MediaItem = {
@@ -9,9 +34,9 @@ export type MediaItem = {
 };
 
 export type ProjectGrid = {
-  /** Колонка начала (1–7) */
+  /** Колонка начала (1–4) */
   col: number;
-  /** Ширина в колонках (1–7) */
+  /** Ширина в колонках (1–4) */
   colSpan: number;
   /** Строка начала (1+) */
   row: number;
@@ -24,8 +49,7 @@ export type Project = {
   slug: string;
   title: string;
   description?: string;
-  /** Устарело: теги сняты с арт-сайта, поле может остаться в данных */
-  tag?: string;
+  tag?: ProjectTag;
   preview: string;
   detailsEnabled: boolean;
   published: boolean;
@@ -33,7 +57,7 @@ export type Project = {
   media: MediaItem[];
   /** Ручной порядок из админки; меньше = выше. Если не задано — по названию. */
   manualOrder?: number;
-  /** Позиция на 7-колоночной сетке главной (если layoutCustomized) */
+  /** Позиция на 4-колоночной сетке главной (если layoutCustomized) */
   grid?: ProjectGrid;
   /** Ручная раскладка на сетке; иначе — лента в одну полосу */
   layoutCustomized?: boolean;
@@ -49,15 +73,6 @@ export type AboutLink = {
   href: string;
 };
 
-export type RoomZoneKey = "wall" | "desk" | "floor" | "paintings";
-
-export type RoomZone = {
-  id: string;
-  key: RoomZoneKey;
-  label: string;
-  src: string;
-};
-
 export type AboutData = {
   title: string;
   text: string;
@@ -65,20 +80,4 @@ export type AboutData = {
   links?: AboutLink[];
   /** Путь к логотипу в /public */
   logo?: string;
-  /** Фото-зоны комнаты: стена, стол, пол, картины */
-  roomZones?: RoomZone[];
 };
-
-/** @deprecated теги сняты с арт-сайта */
-export type ProjectTag = string;
-/** @deprecated */
-export const TAGS: readonly string[] = [];
-/** @deprecated */
-export const ADMIN_PROJECT_TAG_OPTIONS: readonly string[] = [];
-
-export const ROOM_ZONE_META: Array<{ key: RoomZoneKey; label: string }> = [
-  { key: "wall", label: "Стена" },
-  { key: "desk", label: "Стол" },
-  { key: "floor", label: "Пол" },
-  { key: "paintings", label: "Картины" }
-];

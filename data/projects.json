@@ -760,27 +760,14 @@
   },
   {
     "id": "d2980fb0-0d8d-4ec9-aa13-15ec366d26a5",
-    "slug": "album-1784066847543-iu46",
+    "slug": "marker-5-min",
     "title": "",
     "description": "",
-    "preview": "/uploads/046ad240-e776-4ce9-bbce-dc03e6453554.png",
+    "preview": "/uploads/ddf184ce-9bc4-4c3c-aec1-ee45f3a74632.png",
     "detailsEnabled": false,
     "published": true,
     "archived": false,
-    "media": [
-      {
-        "id": "787147fc-2dd1-408e-9509-2ff6ed294c47",
-        "kind": "image",
-        "src": "/uploads/ddf184ce-9bc4-4c3c-aec1-ee45f3a74632.png",
-        "caption": ""
-      },
-      {
-        "id": "a3b1b3a5-1e21-482f-a23f-bc49b041ccc0",
-        "kind": "image",
-        "src": "/uploads/756fe669-f407-44cf-bbeb-c7b25e4a84e9.png",
-        "caption": ""
-      }
-    ],
+    "media": [],
     "richText": "",
     "structuredBlocks": [],
     "projectType": "shot",
@@ -788,9 +775,32 @@
     "manualOrder": 8,
     "grid": {
       "col": 4,
-      "colSpan": 4,
+      "colSpan": 2,
       "row": 48,
-      "rowSpan": 11
+      "rowSpan": 5
+    },
+    "layoutCustomized": true
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "slug": "painting-brush",
+    "title": "",
+    "description": "",
+    "preview": "/uploads/756fe669-f407-44cf-bbeb-c7b25e4a84e9.png",
+    "detailsEnabled": false,
+    "published": true,
+    "archived": false,
+    "media": [],
+    "richText": "",
+    "structuredBlocks": [],
+    "projectType": "shot",
+    "caseBlocks": [],
+    "manualOrder": 16,
+    "grid": {
+      "col": 6,
+      "colSpan": 2,
+      "row": 48,
+      "rowSpan": 5
     },
     "layoutCustomized": true
   },
