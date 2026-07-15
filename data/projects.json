@@ -753,7 +753,7 @@
     "grid": {
       "col": 3,
       "colSpan": 3,
-      "row": 61,
+      "row": 56,
       "rowSpan": 3
     },
     "layoutCustomized": true
@@ -763,11 +763,24 @@
     "slug": "marker-5-min",
     "title": "",
     "description": "",
-    "preview": "/uploads/ddf184ce-9bc4-4c3c-aec1-ee45f3a74632.png",
+    "preview": "/uploads/a1f9e9d8-176f-4ef9-b491-7f8076beda26.png",
     "detailsEnabled": false,
     "published": true,
     "archived": false,
-    "media": [],
+    "media": [
+      {
+        "id": "6a75abe1-a81c-4894-bbcb-2ca826bf2d3f",
+        "kind": "image",
+        "src": "/uploads/e0a77bfa-c3b5-40b8-9716-91237b31c5eb.png",
+        "caption": ""
+      },
+      {
+        "id": "26abd36e-a445-48ac-b00e-3bb069e2c5c0",
+        "kind": "image",
+        "src": "/uploads/1b1747ac-e71c-44a7-bd0b-8b40e4995b01.png",
+        "caption": ""
+      }
+    ],
     "richText": "",
     "structuredBlocks": [],
     "projectType": "shot",
@@ -775,29 +788,6 @@
     "manualOrder": 8,
     "grid": {
       "col": 4,
-      "colSpan": 2,
-      "row": 48,
-      "rowSpan": 5
-    },
-    "layoutCustomized": true
-  },
-  {
-    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-    "slug": "painting-brush",
-    "title": "",
-    "description": "",
-    "preview": "/uploads/756fe669-f407-44cf-bbeb-c7b25e4a84e9.png",
-    "detailsEnabled": false,
-    "published": true,
-    "archived": false,
-    "media": [],
-    "richText": "",
-    "structuredBlocks": [],
-    "projectType": "shot",
-    "caseBlocks": [],
-    "manualOrder": 16,
-    "grid": {
-      "col": 6,
       "colSpan": 2,
       "row": 48,
       "rowSpan": 5
@@ -821,7 +811,7 @@
     "grid": {
       "col": 1,
       "colSpan": 1,
-      "row": 59,
+      "row": 54,
       "rowSpan": 1
     },
     "layoutCustomized": true
@@ -843,7 +833,7 @@
     "grid": {
       "col": 5,
       "colSpan": 3,
-      "row": 65,
+      "row": 60,
       "rowSpan": 2
     },
     "layoutCustomized": true
