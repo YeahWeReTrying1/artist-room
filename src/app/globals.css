@@ -1051,6 +1051,11 @@ a {
   text-align: center;
 }
 
+.aboutInner p {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
 .aboutPhoto {
   width: min(400px, 90vw);
   aspect-ratio: 1 / 1;
@@ -1351,14 +1356,8 @@ button:disabled {
   inset: 0;
   z-index: 80;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  overflow: auto;
-  padding:
-    max(48px, env(safe-area-inset-top, 0px))
-    max(12px, env(safe-area-inset-right, 0px))
-    max(64px, env(safe-area-inset-bottom, 0px))
-    max(12px, env(safe-area-inset-left, 0px));
+  flex-direction: column;
+  overflow: hidden;
   background: rgba(242, 240, 243, 0.82);
   backdrop-filter: blur(160px) saturate(1.15);
   -webkit-backdrop-filter: blur(160px) saturate(1.15);
@@ -1367,10 +1366,11 @@ button:disabled {
 }
 
 .artistProjectClose {
-  position: fixed;
+  position: absolute;
   top: max(12px, env(safe-area-inset-top, 0px));
   right: max(12px, env(safe-area-inset-right, 0px));
-  z-index: 81;
+  z-index: 2;
+  pointer-events: auto;
   width: 48px;
   height: 48px;
   margin: 0;
@@ -1392,7 +1392,16 @@ button:disabled {
 
 .artistProjectScroll {
   width: min(1200px, 100%);
-  flex-shrink: 0;
+  flex: 1;
+  min-height: 0;
+  margin: 0 auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding:
+    max(48px, env(safe-area-inset-top, 0px))
+    max(12px, env(safe-area-inset-right, 0px))
+    max(50vh, 64px, env(safe-area-inset-bottom, 0px))
+    max(12px, env(safe-area-inset-left, 0px));
 }
 
 .artistProjectHeader {
@@ -1475,16 +1484,13 @@ button:disabled {
 }
 
 @media (max-width: 700px) {
-  .artistProjectOverlay {
+  .artistProjectScroll {
+    width: 100%;
     padding:
       max(56px, env(safe-area-inset-top, 0px))
       0
-      max(40px, env(safe-area-inset-bottom, 0px))
+      max(50vh, 40px, env(safe-area-inset-bottom, 0px))
       0;
-  }
-
-  .artistProjectScroll {
-    width: 100%;
   }
 
   .artistProjectHeader {
@@ -1626,6 +1632,7 @@ button:disabled {
   font-size: var(--type-body);
   line-height: 1.45;
   font-weight: 400;
+  white-space: pre-wrap;
 }
 
 .introLinks {
@@ -1722,7 +1729,7 @@ a.gridProjectTitle:hover {
     --grid-cell: calc((100vw - 2 * var(--site-pad) - 2 * var(--site-gap-base)) / 3);
     --cell: calc(100vw - 2 * var(--site-pad));
     --row: var(--grid-cell);
-    --site-gap: clamp(0.6rem, calc(var(--cell) * 0.028), 1.1rem);
+    --site-gap: clamp(3rem, calc(var(--cell) * 0.15), 5.5rem);
     --preview-gap: clamp(0.35rem, calc(var(--cell) * 0.02), 0.85rem);
     --type-body: clamp(0.95rem, calc(var(--cell) * 0.04), 1.25rem);
     --type-title: var(--type-body);
@@ -1746,6 +1753,7 @@ a.gridProjectTitle:hover {
     gap: var(--site-gap);
     grid-template-columns: unset;
     grid-template-rows: unset;
+    padding-bottom: 50vh;
   }
 
   .introBlock {
