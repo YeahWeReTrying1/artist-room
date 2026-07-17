@@ -1695,6 +1695,16 @@ button:disabled {
   object-fit: cover;
 }
 
+.gridProjectMedia.isMediaContain {
+  background: transparent;
+}
+
+.gridProjectMedia.isMediaContain img,
+.gridProjectMedia.isMediaContain video,
+.gridProjectMedia.isMediaContain .gridProjectZoomButton img {
+  object-fit: contain;
+}
+
 .gridProjectTitle {
   margin: 0;
   font-family: "Segoe Print", "Comic Sans MS", cursive;
@@ -1772,6 +1782,8 @@ a.gridProjectTitle:hover {
     min-height: 0;
     grid-column: unset !important;
     grid-row: unset !important;
+    /* Порядок = вкладка «Проекты» в админке (manualOrder → DOM → --feed-order) */
+    order: var(--feed-order, 0);
   }
 
   .gridProjectMedia {

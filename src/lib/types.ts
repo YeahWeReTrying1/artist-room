@@ -37,6 +37,8 @@ export type Project = {
   grid?: ProjectGrid;
   /** Ручная раскладка на сетке; иначе — лента в одну полосу */
   layoutCustomized?: boolean;
+  /** cover (по умолчанию, обрезка) | contain (Fill — целиком в ячейке) */
+  mediaFit?: "cover" | "contain";
   richText?: string;
   structuredBlocks?: Array<{
     title: string;

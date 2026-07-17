@@ -6,7 +6,11 @@ import { getLoader } from "@/lib/storage";
 
 export const metadata: Metadata = {
   title: "Bobkov — творческое портфолио",
-  description: "Рисунки, наброски и комната работ."
+  description: "Рисунки, наброски и комната работ.",
+  icons: {
+    icon: [{ url: "/icon.png", type: "image/png" }],
+    apple: [{ url: "/apple-icon.png", type: "image/png" }]
+  }
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {

@@ -75,7 +75,7 @@
       "rowSpan": 3
     },
     "layoutCustomized": true,
-    "manualOrder": 13
+    "manualOrder": 0
   },
   {
     "id": "09398f7f-860d-4941-8f36-c4b25c5f31cc",
@@ -159,7 +159,7 @@
       "rowSpan": 3
     },
     "layoutCustomized": true,
-    "manualOrder": 12
+    "manualOrder": 1
   },
   {
     "id": "dec57959-6c2c-4b42-b9e0-0821f201eeeb",
@@ -182,7 +182,7 @@
       "rowSpan": 3
     },
     "layoutCustomized": true,
-    "manualOrder": 0
+    "manualOrder": 2
   },
   {
     "id": "fa17735b-ece0-4b96-89db-e4a5400cbc04",
@@ -218,7 +218,7 @@
       "rowSpan": 2
     },
     "layoutCustomized": true,
-    "manualOrder": 1
+    "manualOrder": 3
   },
   {
     "id": "0f43187e-a0ba-418b-abb7-f18ad2959687",
@@ -320,133 +320,7 @@
       "rowSpan": 5
     },
     "layoutCustomized": true,
-    "manualOrder": 11
-  },
-  {
-    "id": "10cc044e-c62c-4a02-aacf-d33bfad34a1d",
-    "slug": "122024",
-    "title": "Пятничные наброски у Киры и Вари 20.12.24",
-    "description": "Рисовали Леру",
-    "preview": "/uploads/dafca2d1-1fe3-485d-b6cd-9b243d9577f0.gif",
-    "detailsEnabled": true,
-    "published": true,
-    "archived": true,
-    "media": [
-      {
-        "id": "119d2336-b59f-4358-9448-0b7962b65091",
-        "kind": "image",
-        "src": "/uploads/7813558e-4e8a-40e4-b07e-81000011dd9d.jpg",
-        "caption": ""
-      },
-      {
-        "id": "533215cb-7df3-4c7b-b313-213abe1eb0bf",
-        "kind": "image",
-        "src": "/uploads/47062e4a-8070-4b6e-93d2-969f4b89cb6a.jpg",
-        "caption": ""
-      },
-      {
-        "id": "553bb23b-5512-4fdf-bd29-4202ae8c5603",
-        "kind": "image",
-        "src": "/uploads/ccada3a0-a4be-435e-917e-f5b6b375d321.jpg",
-        "caption": ""
-      },
-      {
-        "id": "48bf0d6d-4df5-4e88-a7aa-b79675b56dc7",
-        "kind": "image",
-        "src": "/uploads/1fb3f675-6a32-4f67-8422-bfc73ec8bdcb.jpg",
-        "caption": ""
-      },
-      {
-        "id": "b24f3870-a9e5-48f8-a482-5d94732e0ab9",
-        "kind": "image",
-        "src": "/uploads/285aca84-f058-4ba2-879a-e3a513a7db40.jpg",
-        "caption": ""
-      },
-      {
-        "id": "89ca1349-fafe-469a-90c2-6c54d9f64128",
-        "kind": "image",
-        "src": "/uploads/26946cfa-e018-4015-bc53-1ea692903df7.jpg",
-        "caption": ""
-      },
-      {
-        "id": "ffcf6fae-675b-484d-a65d-751f31ad13ec",
-        "kind": "image",
-        "src": "/uploads/51b6f0e9-5770-477f-b14c-62e4cef8e31e.jpg",
-        "caption": ""
-      },
-      {
-        "id": "bcc316c7-f52e-49f9-8000-98789e361c72",
-        "kind": "image",
-        "src": "/uploads/b1cba698-23b2-4bdb-8fda-c2c7c5af7b74.jpg",
-        "caption": ""
-      },
-      {
-        "id": "05144344-c496-43db-9f66-c2d54e402035",
-        "kind": "image",
-        "src": "/uploads/32bb555c-caf5-4ee4-8e2a-c88bf509a4fd.jpg",
-        "caption": ""
-      },
-      {
-        "id": "e1d35fb5-60a9-4c79-b90d-34a36d9462d7",
-        "kind": "image",
-        "src": "/uploads/6152a771-6e40-41d3-8122-a000d457c20b.jpg",
-        "caption": ""
-      },
-      {
-        "id": "34e323ee-62e9-4f3a-911b-415bf5e79815",
-        "kind": "image",
-        "src": "/uploads/6c146ef3-ac26-46af-b42a-b10e3b3e9c65.jpg",
-        "caption": ""
-      },
-      {
-        "id": "3af1607b-4319-40bc-83b4-0993a75b6f71",
-        "kind": "image",
-        "src": "/uploads/3439e5d0-661e-4077-b376-031663c5056f.jpg",
-        "caption": ""
-      },
-      {
-        "id": "4abf6d66-ccf1-4b0b-bf0f-fdf378e60f34",
-        "kind": "image",
-        "src": "/uploads/d484a692-997a-4bab-8ead-6032fce152f5.jpg",
-        "caption": ""
-      },
-      {
-        "id": "1245c6e9-8012-48b7-9139-8679478249f0",
-        "kind": "image",
-        "src": "/uploads/e1ae24be-cdb4-4815-932d-0e6a611b688a.jpg",
-        "caption": ""
-      },
-      {
-        "id": "bc9a7833-7081-4579-923b-5252e3bafbdb",
-        "kind": "image",
-        "src": "/uploads/dca3afe3-51d4-4826-bec9-597e2b47cc09.jpg",
-        "caption": ""
-      },
-      {
-        "id": "a7942cbc-c26b-4ce3-aa55-da320d0862b1",
-        "kind": "image",
-        "src": "/uploads/61416e64-93fb-490d-b1d4-e130d14571ba.jpg",
-        "caption": ""
-      },
-      {
-        "id": "5991f3ab-26b1-4b56-b227-77cb03955dcd",
-        "kind": "image",
-        "src": "/uploads/83340599-5391-4a89-828b-f1657212f6ec.jpg",
-        "caption": ""
-      }
-    ],
-    "richText": "",
-    "structuredBlocks": [],
-    "projectType": "shot",
-    "caseBlocks": [],
-    "grid": {
-      "col": 4,
-      "colSpan": 3,
-      "row": 20,
-      "rowSpan": 5
-    },
-    "layoutCustomized": true,
-    "manualOrder": 14
+    "manualOrder": 4
   },
   {
     "id": "01e1ddab-b302-4dfc-a792-34f0083f644b",
@@ -572,7 +446,7 @@
       "rowSpan": 3
     },
     "layoutCustomized": true,
-    "manualOrder": 15
+    "manualOrder": 5
   },
   {
     "id": "0ddea8a1-dea3-40c6-bb40-d058d7ed3ea5",
@@ -595,7 +469,7 @@
       "rowSpan": 3
     },
     "layoutCustomized": true,
-    "manualOrder": 2
+    "manualOrder": 6
   },
   {
     "id": "0d1ae52a-a791-4a4b-bd78-64f7ce7a6284",
@@ -611,11 +485,11 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 3,
+    "manualOrder": 7,
     "grid": {
       "col": 3,
       "colSpan": 3,
-      "row": 28,
+      "row": 27,
       "rowSpan": 4
     },
     "layoutCustomized": true
@@ -634,12 +508,12 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 4,
+    "manualOrder": 8,
     "grid": {
       "col": 2,
-      "colSpan": 4,
-      "row": 33,
-      "rowSpan": 3
+      "colSpan": 3,
+      "row": 32,
+      "rowSpan": 2
     },
     "layoutCustomized": true
   },
@@ -657,11 +531,11 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 5,
+    "manualOrder": 9,
     "grid": {
       "col": 3,
       "colSpan": 2,
-      "row": 43,
+      "row": 39,
       "rowSpan": 3
     },
     "layoutCustomized": true
@@ -680,11 +554,11 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 7,
+    "manualOrder": 10,
     "grid": {
       "col": 4,
       "colSpan": 2,
-      "row": 39,
+      "row": 36,
       "rowSpan": 2
     },
     "layoutCustomized": true
@@ -703,11 +577,11 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 6,
+    "manualOrder": 11,
     "grid": {
       "col": 1,
       "colSpan": 2,
-      "row": 37,
+      "row": 35,
       "rowSpan": 3
     },
     "layoutCustomized": true
@@ -726,11 +600,11 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 9,
+    "manualOrder": 12,
     "grid": {
       "col": 1,
       "colSpan": 3,
-      "row": 47,
+      "row": 42,
       "rowSpan": 4
     },
     "layoutCustomized": true
@@ -749,11 +623,11 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 10,
+    "manualOrder": 15,
     "grid": {
       "col": 3,
       "colSpan": 3,
-      "row": 56,
+      "row": 51,
       "rowSpan": 3
     },
     "layoutCustomized": true
@@ -785,11 +659,11 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 8,
+    "manualOrder": 13,
     "grid": {
       "col": 4,
       "colSpan": 2,
-      "row": 48,
+      "row": 43,
       "rowSpan": 5
     },
     "layoutCustomized": true
@@ -811,10 +685,11 @@
     "grid": {
       "col": 1,
       "colSpan": 1,
-      "row": 54,
+      "row": 49,
       "rowSpan": 1
     },
-    "layoutCustomized": true
+    "layoutCustomized": true,
+    "manualOrder": 14
   },
   {
     "id": "7a9c51f1-d1ca-4436-a256-57501274dc72",
@@ -833,9 +708,10 @@
     "grid": {
       "col": 5,
       "colSpan": 3,
-      "row": 60,
+      "row": 55,
       "rowSpan": 2
     },
-    "layoutCustomized": true
+    "layoutCustomized": true,
+    "manualOrder": 16
   }
 ]

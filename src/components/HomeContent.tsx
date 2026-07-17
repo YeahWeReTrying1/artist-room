@@ -296,14 +296,23 @@ export function HomeContent({ projects, about }: Props) {
           </div>
         </section>
 
-        {orderedProjects.map((project) => {
+        {orderedProjects.map((project, feedIndex) => {
           const grid = resolveProjectGrid(project, stacked.get(project.id)!);
           const openable = canOpenProject(project);
           const canZoom = !openable && Boolean(project.preview) && !isVideoPreview(project.preview);
+          // --feed-order: на мобилке (flex) принудительно фиксирует порядок вкладки «Проекты»
+          const cellStyle = {
+            ...gridStyle(grid),
+            ["--feed-order" as string]: feedIndex + 1
+          } as CSSProperties;
 
           return (
-            <CardReveal key={project.id} className="gridProject" style={gridStyle(grid)}>
-              <div className={`gridProjectMedia${isGifPreview(project.preview) ? " isGifPreview" : ""}`}>
+            <CardReveal key={project.id} className="gridProject" style={cellStyle}>
+              <div
+                className={`gridProjectMedia${isGifPreview(project.preview) ? " isGifPreview" : ""}${
+                  project.mediaFit === "contain" ? " isMediaContain" : ""
+                }`}
+              >
                 {openable ? (
                   <button
                     type="button"
