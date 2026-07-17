@@ -1801,3 +1801,43 @@ a.gridProjectTitle:hover {
     text-align: center;
   }
 }
+
+.strokeLoader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  transition: opacity 0.4s ease;
+}
+
+.strokeLoader.isDone {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.strokeLoaderInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.strokeLoaderCanvas {
+  display: block;
+  width: min(320px, 56vw, 48vh);
+  height: min(320px, 56vw, 48vh);
+  aspect-ratio: 1;
+}
+
+.strokeLoaderPercent {
+  margin: 0;
+  font-family: "BobkovHand", "Segoe Print", "Comic Sans MS", cursive;
+  font-size: clamp(0.85rem, 2.4vw, 1.05rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #222;
+  line-height: 1;
+  user-select: none;
+}

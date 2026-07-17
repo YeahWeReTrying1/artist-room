@@ -5,6 +5,7 @@ import { AboutData, Project } from "@/lib/types";
 const dataDir = path.join(process.cwd(), "data");
 const projectsPath = path.join(dataDir, "projects.json");
 const aboutPath = path.join(dataDir, "about.json");
+const loaderPath = path.join(dataDir, "loader.json");
 
 const defaultAbout: AboutData = {
   title: "Обо мне",
@@ -57,4 +58,34 @@ export async function getAbout(): Promise<AboutData> {
 export async function saveAbout(about: AboutData): Promise<void> {
   await ensureDataFile(aboutPath, JSON.stringify(defaultAbout, null, 2));
   await fs.writeFile(aboutPath, JSON.stringify(about, null, 2), "utf-8");
+}
+
+export type LoaderData = {
+  version?: number;
+  size?: number;
+  background?: string;
+  strokes?: Array<{
+    id?: string;
+    color?: string;
+    width?: number;
+    points: Array<{ x: number; y: number; t?: number }>;
+  }>;
+};
+
+const defaultLoader: LoaderData = {
+  version: 1,
+  size: 400,
+  background: "#ffffff",
+  strokes: []
+};
+
+export async function getLoader(): Promise<LoaderData> {
+  await ensureDataFile(loaderPath, JSON.stringify(defaultLoader, null, 2));
+  const raw = (await fs.readFile(loaderPath, "utf-8")).replace(/^\uFEFF/, "");
+  const parsed = JSON.parse(raw) as LoaderData;
+  return {
+    ...defaultLoader,
+    ...parsed,
+    strokes: Array.isArray(parsed?.strokes) ? parsed.strokes : []
+  };
 }

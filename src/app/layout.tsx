@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { StrokeLoader } from "@/components/StrokeLoader";
 import { getSiteBasePath } from "@/lib/siteAssets";
+import { getLoader } from "@/lib/storage";
 
 export const metadata: Metadata = {
   title: "Bobkov — творческое портфолио",
   description: "Рисунки, наброски и комната работ."
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const basePath = getSiteBasePath();
+  const loader = await getLoader();
 
   return (
     <html lang="ru">
@@ -21,7 +24,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
         ) : null}
       </head>
-      <body>{children}</body>
+      <body>
+        <StrokeLoader loader={loader} storageKey="bobkov-loader-artist" />
+        {children}
+      </body>
     </html>
   );
 }

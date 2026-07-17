@@ -23,6 +23,7 @@ import {
   resolveProjectGrid
 } from "@/lib/grid";
 import { canOpenProject } from "@/lib/projectAccess";
+import { sortProjectsForFeed } from "@/lib/projectOrder";
 import { ROOM_ZONE_META, type AboutData, type Project } from "@/lib/types";
 
 function isVideoPreview(src: string) {
@@ -87,12 +88,15 @@ export function HomeContent({ projects, about }: Props) {
   const suppressBackdropClickRef = useRef(false);
   const lightboxSkipNextRefitRef = useRef(true);
 
-  const stacked = buildStackedPlacements(projects);
-  const rowCount = getGridRowCount(projects);
+  // Мобилка: DOM-порядок = вкладка «Проекты» (manualOrder).
+  // Десктоп: визуальная раскладка из админской сетки (grid.row / grid.col), не зависит от DOM-порядка.
+  const orderedProjects = useMemo(() => sortProjectsForFeed(projects), [projects]);
+  const stacked = buildStackedPlacements(orderedProjects);
+  const rowCount = getGridRowCount(orderedProjects);
   const links = about.links?.length ? about.links : FALLBACK_LINKS;
   const introText = about.text?.trim() || FALLBACK_TEXT;
   const roomZones = about.roomZones?.filter((zone) => zone.src) || [];
-  const openProject = projects.find((project) => project.id === openProjectId) || null;
+  const openProject = orderedProjects.find((project) => project.id === openProjectId) || null;
 
   const lightboxItems = useMemo(() => {
     const zones = roomZones.map((zone) => {
@@ -104,7 +108,7 @@ export function HomeContent({ projects, about }: Props) {
         caption: ""
       };
     });
-    const singles = projects
+    const singles = orderedProjects
       .filter((project) => !canOpenProject(project))
       .filter((project) => project.preview && !isVideoPreview(project.preview))
       .map((project) => ({
@@ -114,7 +118,7 @@ export function HomeContent({ projects, about }: Props) {
         caption: ""
       }));
     return [...zones, ...singles];
-  }, [projects, roomZones]);
+  }, [orderedProjects, roomZones]);
 
   const getThumbRect = (id: string): Rect | null => {
     const el = document.querySelector(`[data-zoom-id="${id}"] img`) as HTMLImageElement | null;
@@ -292,7 +296,7 @@ export function HomeContent({ projects, about }: Props) {
           </div>
         </section>
 
-        {projects.map((project) => {
+        {orderedProjects.map((project) => {
           const grid = resolveProjectGrid(project, stacked.get(project.id)!);
           const openable = canOpenProject(project);
           const canZoom = !openable && Boolean(project.preview) && !isVideoPreview(project.preview);

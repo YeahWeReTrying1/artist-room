@@ -1,5 +1,6 @@
 import { Project } from "@/lib/types";
 
+/** Порядок вкладки «Проекты» / мобильной ленты. */
 export function sortProjectsForFeed(projects: Project[]): Project[] {
   return [...projects].sort((a, b) => {
     const aHasManual = typeof a.manualOrder === "number";
