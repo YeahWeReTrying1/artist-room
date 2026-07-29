@@ -69,9 +69,9 @@
     "projectType": "shot",
     "caseBlocks": [],
     "grid": {
-      "col": 3,
+      "col": 5,
       "colSpan": 2,
-      "row": 2,
+      "row": 1,
       "rowSpan": 3
     },
     "layoutCustomized": true,

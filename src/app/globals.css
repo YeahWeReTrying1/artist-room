@@ -472,6 +472,8 @@ a {
 }
 
 .projectPage {
+  /* Контент/медиа внутри проекта: десктоп 36, мобилка 18. */
+  --site-pad: 36px;
   --site-gap-base: clamp(var(--gap-scale-min), 1.15vw, var(--gap-scale-max));
   --col-w: calc((100vw - 2 * var(--site-pad) - 4 * var(--site-gap-base)) / 5);
   --site-gap: clamp(var(--gap-scale-min), calc(var(--col-w) * var(--gap-cell-ratio)), var(--gap-scale-max));
@@ -554,6 +556,7 @@ a {
 
 @media (max-width: 900px) {
   .projectPage {
+    --site-pad: 18px;
     --site-gap-base: clamp(1rem, 3.5vw, 1.5rem);
     --col-w: calc(100vw - 2 * var(--site-pad));
     --site-gap: clamp(var(--gap-scale-min), calc(var(--col-w) * 0.022), 1.5rem);
@@ -1332,6 +1335,11 @@ button:disabled {
 
 .siteShell--artist {
   background: #f2f0f3;
+  --logo-w: var(--cell);
+  --logo-h: calc(var(--logo-w) * 58 / 175);
+  --project-overlay-top: calc(
+    var(--site-pad) + var(--logo-h) + 20px + env(safe-area-inset-top, 0px)
+  );
 }
 
 .gridProjectTitleBtn {
@@ -1351,6 +1359,35 @@ button:disabled {
   opacity: 0.65;
 }
 
+.siteShell--artist > .editorialGrid,
+.siteShell--artist > .roomZones {
+  transition:
+    filter 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.45s ease;
+  transform-origin: center top;
+}
+
+.siteShell--artist.isProjectOpen > .editorialGrid,
+.siteShell--artist.isProjectOpen > .roomZones {
+  filter: blur(16px) saturate(1.08);
+  transform: scale(1.015);
+  opacity: 0.92;
+  pointer-events: none;
+  user-select: none;
+}
+
+.siteShell--artist.isProjectOpen > .siteLogoBar {
+  filter: none;
+  transform: none;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.siteShell--artist.isProjectOpen > .siteLogoBar .siteLogoLink {
+  pointer-events: auto;
+}
+
 .artistProjectOverlay {
   position: fixed;
   inset: 0;
@@ -1358,11 +1395,59 @@ button:disabled {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background: rgba(242, 240, 243, 0.82);
-  backdrop-filter: blur(160px) saturate(1.15);
-  -webkit-backdrop-filter: blur(160px) saturate(1.15);
+  background: rgba(242, 240, 243, 0.28);
+  backdrop-filter: blur(28px) saturate(1.12);
+  -webkit-backdrop-filter: blur(28px) saturate(1.12);
   color: var(--text);
   cursor: pointer;
+  animation: artistOverlayIn 0.48s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes artistOverlayIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.artistProjectScroll {
+  animation: artistOverlayContentIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes artistOverlayContentIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .siteShell--artist > .editorialGrid,
+  .siteShell--artist > .roomZones,
+  .siteShell--artist.isProjectOpen > .editorialGrid,
+  .siteShell--artist.isProjectOpen > .roomZones {
+    transition: none;
+    transform: none;
+    filter: none;
+    opacity: 1;
+  }
+
+  .siteShell--artist.isProjectOpen > .editorialGrid,
+  .siteShell--artist.isProjectOpen > .roomZones {
+    filter: blur(10px);
+    opacity: 0.88;
+  }
+
+  .artistProjectOverlay,
+  .artistProjectScroll {
+    animation: none;
+  }
 }
 
 .artistProjectClose {
@@ -1397,11 +1482,36 @@ button:disabled {
   margin: 0 auto;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(17, 17, 17, 0.18) transparent;
   padding:
-    max(48px, env(safe-area-inset-top, 0px))
+    var(--project-overlay-top)
     max(12px, env(safe-area-inset-right, 0px))
     max(50vh, 64px, env(safe-area-inset-bottom, 0px))
     max(12px, env(safe-area-inset-left, 0px));
+}
+
+.artistProjectScroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.artistProjectScroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.artistProjectScroll::-webkit-scrollbar-thumb {
+  background-color: rgba(17, 17, 17, 0.16);
+  background-clip: padding-box;
+  border: 3px solid transparent;
+  border-radius: 999px;
+}
+
+.artistProjectScroll::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(17, 17, 17, 0.28);
+}
+
+.artistProjectScroll::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 .artistProjectHeader {
@@ -1487,7 +1597,7 @@ button:disabled {
   .artistProjectScroll {
     width: 100%;
     padding:
-      max(112px, calc(112px + env(safe-area-inset-top, 0px)))
+      var(--project-overlay-top)
       0
       max(50vh, 40px, env(safe-area-inset-bottom, 0px))
       0;
@@ -1620,35 +1730,70 @@ button:disabled {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 0.65em;
+  align-items: flex-start;
+  gap: calc(var(--grid-cell) * 0.1);
   min-height: 0;
   z-index: 2;
   margin: 0;
   padding: calc(var(--grid-cell) / 4) 0 0;
+  max-width: 100%;
+  text-align: left;
 }
 
 .introText {
   margin: 0;
   font-size: var(--type-body);
-  line-height: 1.45;
+  line-height: 1.5;
   font-weight: 400;
-  white-space: pre-wrap;
+  text-wrap: pretty;
+  white-space: pre-line;
+  max-width: 100%;
+}
+
+.introContact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55em;
+  font-size: var(--type-body);
+  max-width: 100%;
+}
+
+.introEmail {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.introEmail:hover {
+  opacity: 0.65;
 }
 
 .introLinks {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  gap: 0.65em 1em;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
   font-size: var(--type-body);
+  max-width: 100%;
 }
 
 .introLinks a {
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  display: inline-block;
+  margin: 0;
+  padding: 0.08em 0.28em;
+  border-radius: 0;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  line-height: 1.25;
 }
 
 .introLinks a:hover {
-  opacity: 0.65;
+  opacity: 0.8;
 }
 
 .gridProject {
@@ -1734,7 +1879,7 @@ a.gridProjectTitle:hover {
 
 @media (max-width: 900px) {
   .siteShell {
-    --site-pad: 16px;
+    --site-pad: 18px;
     --site-gap-base: clamp(0.75rem, 2.8vw, 1.1rem);
     --grid-cell: calc((100vw - 2 * var(--site-pad) - 2 * var(--site-gap-base)) / 3);
     --cell: calc(100vw - 2 * var(--site-pad));
@@ -1757,6 +1902,10 @@ a.gridProjectTitle:hover {
     width: min(var(--cell), 280px);
   }
 
+  .siteShell--artist {
+    --logo-w: min(var(--cell), 280px);
+  }
+
   .editorialGrid {
     display: flex;
     flex-direction: column;
@@ -1772,6 +1921,14 @@ a.gridProjectTitle:hover {
     grid-column: unset !important;
     grid-row: unset !important;
     padding-bottom: var(--preview-gap);
+    align-items: flex-start;
+    gap: calc(var(--grid-cell) * 0.1);
+  }
+
+  .introLinks {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   .gridProject {

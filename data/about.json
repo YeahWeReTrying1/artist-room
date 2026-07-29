@@ -42,5 +42,9 @@
       "label": "Картины",
       "src": ""
     }
-  ]
+  ],
+  "introLayout": {
+    "col": 2,
+    "colSpan": 3
+  }
 }

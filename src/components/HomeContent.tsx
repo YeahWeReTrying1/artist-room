@@ -57,6 +57,8 @@ const FALLBACK_LINKS = [
   { label: "Telegram", href: "https://t.me/DeMaXiTo" }
 ];
 
+const CONTACT_EMAIL = "maxxbobkov@gmail.com";
+
 const LIGHTBOX_SWIPE_PX = 56;
 
 function getLightboxPadding() {
@@ -249,7 +251,7 @@ export function HomeContent({ projects, about }: Props) {
   };
 
   return (
-    <div className="siteShell siteShell--artist">
+    <div className={`siteShell siteShell--artist${openProject ? " isProjectOpen" : ""}`}>
       <SiteNav />
 
       {roomZones.length > 0 ? (
@@ -282,17 +284,30 @@ export function HomeContent({ projects, about }: Props) {
         <section
           className="introBlock"
           style={{
-            gridColumn: `${INTRO_COL} / span ${INTRO_COL_SPAN}`,
+            gridColumn: `${
+              about.introLayout?.col && about.introLayout.col >= 1 ? about.introLayout.col : INTRO_COL
+            } / span ${
+              about.introLayout?.colSpan && about.introLayout.colSpan >= 1
+                ? about.introLayout.colSpan
+                : INTRO_COL_SPAN
+            }`,
             gridRow: `1 / span ${INTRO_ROW_SPAN}`
           }}
         >
           <p className="introText">{introText}</p>
-          <div className="introLinks">
-            {links.map((link) => (
-              <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
-                {link.label}
-              </a>
-            ))}
+          <div className="introContact">
+            <a className="introEmail" href={`mailto:${CONTACT_EMAIL}`}>
+              {CONTACT_EMAIL}
+            </a>
+            {links.length > 0 ? (
+              <div className="introLinks">
+                {links.map((link) => (
+                  <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            ) : null}
           </div>
         </section>
 

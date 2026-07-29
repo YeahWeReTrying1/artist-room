@@ -69,6 +69,11 @@ export type AboutData = {
   logo?: string;
   /** Фото-зоны комнаты: стена, стол, пол, картины */
   roomZones?: RoomZone[];
+  /** Позиция текста «о себе» на главной сетке */
+  introLayout?: {
+    col: number;
+    colSpan: number;
+  };
 };
 
 /** @deprecated теги сняты с арт-сайта */
