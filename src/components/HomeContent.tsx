@@ -295,19 +295,13 @@ export function HomeContent({ projects, about }: Props) {
           }}
         >
           <p className="introText">{introText}</p>
-          <div className="introContact">
-            <a className="introEmail" href={`mailto:${CONTACT_EMAIL}`}>
-              {CONTACT_EMAIL}
-            </a>
-            {links.length > 0 ? (
-              <div className="introLinks">
-                {links.map((link) => (
-                  <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
-                    {link.label}
-                  </a>
-                ))}
-              </div>
-            ) : null}
+          <div className="introLinks">
+            {links.map((link) => (
+              <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
+                {link.label}
+              </a>
+            ))}
+            <a href={`mailto:${CONTACT_EMAIL}`}>почта</a>
           </div>
         </section>
 

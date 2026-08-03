@@ -474,6 +474,7 @@ a {
 .projectPage {
   /* Контент/медиа внутри проекта: десктоп 36, мобилка 18. */
   --site-pad: 36px;
+  --preview-radius: 0;
   --site-gap-base: clamp(var(--gap-scale-min), 1.15vw, var(--gap-scale-max));
   --col-w: calc((100vw - 2 * var(--site-pad) - 4 * var(--site-gap-base)) / 5);
   --site-gap: clamp(var(--gap-scale-min), calc(var(--col-w) * var(--gap-cell-ratio)), var(--gap-scale-max));
@@ -556,11 +557,11 @@ a {
 
 @media (max-width: 900px) {
   .projectPage {
-    --site-pad: 18px;
-    --site-gap-base: clamp(1rem, 3.5vw, 1.5rem);
+    --site-pad: 12px;
+    --site-gap-base: 12px;
     --col-w: calc(100vw - 2 * var(--site-pad));
-    --site-gap: clamp(var(--gap-scale-min), calc(var(--col-w) * 0.022), 1.5rem);
-    --preview-gap: clamp(var(--preview-gap-min), calc(var(--col-w) * 0.018), 1.125rem);
+    --site-gap: 12px;
+    --preview-gap: 12px;
   }
 }
 
@@ -951,7 +952,6 @@ a {
 .projectNearbySection {
   margin-top: 36px;
   padding-top: 18px;
-  border-top: 1px solid #e8e8e8;
 }
 
 .projectNearbyHeading {
@@ -990,6 +990,7 @@ a {
   max-width: none;
   object-fit: cover;
   background: #f1f1f1;
+  border-radius: var(--preview-radius, 0);
 }
 
 .projectNearbyTitle {
@@ -1234,6 +1235,31 @@ button:disabled {
     margin-top: 26px;
   }
 
+  .projectNearby {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow: visible;
+  }
+
+  .projectNearbyItem {
+    flex: none;
+    width: 100%;
+    gap: 0;
+  }
+
+  .projectNearbyTitle {
+    margin: 2px 0 4px;
+  }
+
+  .projectNearbyMedia {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: var(--preview-radius, 0);
+  }
+
   .projectPagerLink {
     font-size: var(--type-body);
   }
@@ -1260,15 +1286,15 @@ button:disabled {
 
   .grid {
     column-count: 1;
-    column-gap: 14px;
+    column-gap: 12px;
   }
 
   .grid > .cardReveal {
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
 
   .projectMediaGrid {
-    gap: var(--site-gap);
+    gap: 12px;
     margin-top: calc(var(--site-gap) * 2);
   }
 
@@ -1322,6 +1348,7 @@ button:disabled {
 
 .siteShell {
   --site-gap-base: clamp(0.65rem, 0.9vw, 1.1rem);
+  --preview-radius: 0;
   --grid-cell: calc((100vw - 2 * var(--site-pad) - 6 * var(--site-gap-base)) / 7);
   --cell: var(--grid-cell);
   --row: var(--grid-cell);
@@ -1586,10 +1613,11 @@ button:disabled {
 
 @media (max-width: 900px) {
   .artistProjectHeader {
-    margin-bottom: 64px;
+    margin-bottom: 32px;
   }
+
   .artistProjectStack {
-    gap: 64px;
+    gap: 12px;
   }
 }
 
@@ -1598,31 +1626,31 @@ button:disabled {
     width: 100%;
     padding:
       var(--project-overlay-top)
-      0
+      12px
       max(50vh, 40px, env(safe-area-inset-bottom, 0px))
-      0;
+      12px;
   }
 
   .artistProjectHeader {
     width: 100%;
-    margin-bottom: 32px;
-    padding: 0 16px;
+    margin-bottom: 24px;
+    padding: 0;
   }
 
   .artistProjectStack {
     width: 100%;
-    gap: 28px;
+    gap: 12px;
   }
 
   .artistProjectFigure {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
+    width: 100%;
+    margin-left: 0;
   }
 
   .artistProjectFigure img,
   .artistProjectFigure video {
     width: 100%;
-    max-width: 100vw;
+    max-width: 100%;
   }
 
   .artistProjectCaption {
@@ -1731,7 +1759,7 @@ button:disabled {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: calc(var(--grid-cell) * 0.1);
+  gap: calc(var(--grid-cell) * 0.1 + 12px);
   min-height: 0;
   z-index: 2;
   margin: 0;
@@ -1777,7 +1805,8 @@ button:disabled {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 8px;
-  font-size: var(--type-body);
+  font-size: 18px;
+  line-height: 24px;
   max-width: 100%;
 }
 
@@ -1789,7 +1818,8 @@ button:disabled {
   background: #111;
   color: #fff;
   text-decoration: none;
-  line-height: 1.25;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .introLinks a:hover {
@@ -1809,6 +1839,7 @@ button:disabled {
   min-height: 0;
   overflow: hidden;
   background: transparent;
+  border-radius: var(--preview-radius, 0);
 }
 
 .gridProjectMedia.isGifPreview {
@@ -1879,13 +1910,13 @@ a.gridProjectTitle:hover {
 
 @media (max-width: 900px) {
   .siteShell {
-    --site-pad: 18px;
-    --site-gap-base: clamp(0.75rem, 2.8vw, 1.1rem);
+    --site-pad: 12px;
+    --site-gap-base: 12px;
     --grid-cell: calc((100vw - 2 * var(--site-pad) - 2 * var(--site-gap-base)) / 3);
     --cell: calc(100vw - 2 * var(--site-pad));
     --row: var(--grid-cell);
-    --site-gap: clamp(3rem, calc(var(--cell) * 0.15), 5.5rem);
-    --preview-gap: clamp(0.35rem, calc(var(--cell) * 0.02), 0.85rem);
+    --site-gap: 12px;
+    --preview-gap: 12px;
     --type-body: clamp(0.95rem, calc(var(--cell) * 0.04), 1.25rem);
     --type-title: var(--type-body);
   }
@@ -1909,7 +1940,7 @@ a.gridProjectTitle:hover {
   .editorialGrid {
     display: flex;
     flex-direction: column;
-    gap: var(--site-gap);
+    gap: 12px;
     grid-template-columns: unset;
     grid-template-rows: unset;
     padding-bottom: 50vh;
@@ -1922,7 +1953,7 @@ a.gridProjectTitle:hover {
     grid-row: unset !important;
     padding-bottom: var(--preview-gap);
     align-items: flex-start;
-    gap: calc(var(--grid-cell) * 0.1);
+    gap: calc(var(--grid-cell) * 0.1 + 12px);
   }
 
   .introLinks {
@@ -1934,13 +1965,25 @@ a.gridProjectTitle:hover {
   .gridProject {
     display: flex;
     flex-direction: column;
-    gap: var(--preview-gap);
+    gap: 0;
     width: 100%;
     min-height: 0;
     grid-column: unset !important;
     grid-row: unset !important;
     /* Порядок = вкладка «Проекты» в админке (manualOrder → DOM → --feed-order) */
     order: var(--feed-order, 0);
+  }
+
+  .gridProjectTitle {
+    margin: 2px 0 4px;
+  }
+
+  .projectNearbyItem {
+    gap: 0;
+  }
+
+  .projectNearbyTitle {
+    margin: 2px 0 4px;
   }
 
   .gridProjectMedia {
