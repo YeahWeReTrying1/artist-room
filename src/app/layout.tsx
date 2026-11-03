@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Bobkov — творческое портфолио",
   description: "Рисунки, наброски и комната работ.",
   icons: {
-    icon: [{ url: `${siteBasePath}/favicon.png`, type: "image/png" }],
+    icon: [{ url: `${siteBasePath}/favicon-v2.png`, type: "image/png" }],
     apple: [{ url: `${siteBasePath}/apple-icon.png`, type: "image/png" }]
   }
 };
