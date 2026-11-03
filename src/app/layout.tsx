@@ -4,12 +4,14 @@ import { StrokeLoader } from "@/components/StrokeLoader";
 import { getSiteBasePath } from "@/lib/siteAssets";
 import { getLoader } from "@/lib/storage";
 
+const siteBasePath = (process.env.NEXT_PUBLIC_BASE_PATH || "").replace(/\/$/, "");
+
 export const metadata: Metadata = {
   title: "Bobkov — творческое портфолио",
   description: "Рисунки, наброски и комната работ.",
   icons: {
-    icon: [{ url: "/icon.png", type: "image/png" }],
-    apple: [{ url: "/apple-icon.png", type: "image/png" }]
+    icon: [{ url: `${siteBasePath}/favicon.png`, type: "image/png" }],
+    apple: [{ url: `${siteBasePath}/apple-icon.png`, type: "image/png" }]
   }
 };
 
