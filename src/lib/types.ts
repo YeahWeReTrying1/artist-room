@@ -39,6 +39,8 @@ export type Project = {
   layoutCustomized?: boolean;
   /** cover (по умолчанию, обрезка) | contain (Fill — целиком в ячейке) */
   mediaFit?: "cover" | "contain";
+  /** Скругление превью в сетке, px. Нет / 0 = без скругления */
+  previewRadius?: number;
   richText?: string;
   structuredBlocks?: Array<{
     title: string;

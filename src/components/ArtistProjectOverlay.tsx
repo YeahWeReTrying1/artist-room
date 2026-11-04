@@ -1,6 +1,9 @@
 "use client";
 
 import { useEffect } from "react";
+import { ScrollGif } from "@/components/ScrollGif";
+import { ArtistImage } from "@/components/ArtistImage";
+import { warmMedia } from "@/lib/mediaAssets";
 import type { Project } from "@/lib/types";
 import { getProjectGallery } from "@/lib/projectAccess";
 
@@ -15,6 +18,10 @@ type Props = {
 
 export function ArtistProjectOverlay({ project, onClose }: Props) {
   const gallery = getProjectGallery(project);
+
+  useEffect(() => {
+    if (gallery[1]) warmMedia(gallery[1].src);
+  }, [project.id]);
 
   useEffect(() => {
     const prev = document.body.style.overflow;
@@ -43,7 +50,7 @@ export function ArtistProjectOverlay({ project, onClose }: Props) {
         onClick={onClose}
         aria-label="Закрыть"
       >
-        ×
+        <span>закрыть</span><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m4 4 12 12M16 4 4 16" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg>
       </button>
       <div className="artistProjectScroll">
         <header className="artistProjectHeader">
@@ -53,7 +60,7 @@ export function ArtistProjectOverlay({ project, onClose }: Props) {
           ) : null}
         </header>
         <div className="artistProjectStack">
-          {gallery.map((item) => (
+          {gallery.map((item, index) => (
             <figure key={item.id} className="artistProjectFigure">
               {item.kind === "video" || isVideoSrc(item.src) ? (
                 <video
@@ -64,7 +71,7 @@ export function ArtistProjectOverlay({ project, onClose }: Props) {
                   onClick={(event) => event.stopPropagation()}
                 />
               ) : (
-                <img src={item.src} alt={item.caption || project.title || ""} loading="lazy" />
+                /\.gif$/i.test(item.src) ? <ScrollGif src={item.src} alt={item.caption || project.title || ""}/> : <ArtistImage src={item.src} variant="full" alt={item.caption || project.title || ""} loading={index === 0 ? "eager" : "lazy"} fetchPriority={index === 0 ? "high" : "auto"} />
               )}
               {item.caption?.trim() ? (
                 <figcaption className="artistProjectCaption handCaption">{item.caption.trim()}</figcaption>

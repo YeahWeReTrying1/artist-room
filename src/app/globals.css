@@ -1328,17 +1328,7 @@ button:disabled {
 
 /* ——— Artist portfolio: 7-column room grid ——— */
 
-@font-face {
-  font-family: "BobkovHand";
-  src:
-    url("/fonts/hand-variable.woff2") format("woff2-variations"),
-    url("/fonts/hand-variable.woff2") format("woff2"),
-    url("/fonts/hand-variable.ttf") format("truetype"),
-    url("/fonts/hand-variable.otf") format("opentype");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
+
 
 .handCaption {
   font-family: "BobkovHand", "Segoe Print", "Comic Sans MS", cursive;
@@ -2053,3 +2043,46 @@ a.gridProjectTitle:hover {
   line-height: 1;
   user-select: none;
 }
+
+/* Artist scroll edition */
+.scrollPortfolio{--scroll-bg:#c5c7d5;--scroll-ink:#faedf0;--text-y:-60%;position:relative;background:var(--scroll-bg);isolation:isolate;overflow:clip}
+.scrollBackdrop{position:fixed;inset:0;z-index:-1;background:var(--scroll-bg);overflow:hidden;pointer-events:none}
+.scrollManuscript{width:100%;transform:translate3d(0,var(--text-y),0);will-change:transform}
+.scrollManuscriptSheet{width:100%;aspect-ratio:1653/2338;background:var(--scroll-ink);mask-size:100% 100%;mask-repeat:no-repeat;-webkit-mask-size:100% 100%;-webkit-mask-repeat:no-repeat}
+.scrollWork{height:240svh;position:relative}
+.scrollWorkSticky{height:100svh;position:sticky;top:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.scrollArtwork{display:block;width:48vw;max-width:850px;height:70svh;padding:0;border:0;border-radius:0;background:none;cursor:pointer;transform:translate3d(var(--work-x),0,0);pointer-events:auto;-webkit-tap-highlight-color:transparent}
+.scrollArtwork img,.scrollArtwork video{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 24px color-mix(in srgb,var(--scroll-ink) 55%,transparent))}
+.scrollArtwork--1{width:39vw;height:76svh}.scrollArtwork--2{width:54vw;height:62svh}
+.scrollArtwork:focus-visible{outline:1px solid var(--scroll-ink);outline-offset:10px}
+.scrollSignature{position:fixed;right:25px;bottom:24px;width:105px;z-index:30;color:#ddd}
+.scrollSignature img,.scrollSignature svg{display:block;width:100%;height:auto;max-height:45px;object-fit:contain}
+.scrollLinks{position:fixed;bottom:26px;left:50%;transform:translateX(-50%);display:flex;gap:20px;z-index:30;background:none;font:11px/1.3 Arial,sans-serif;white-space:nowrap}
+.scrollLinks a{color:#eee;text-decoration:none}.scrollLinks a:hover{text-decoration:underline}
+.artistProjectScroll{overscroll-behavior:contain}.artistProjectOverlay{overscroll-behavior:contain;z-index:100}
+@media(max-width:700px){.scrollWork{height:210svh}.scrollArtwork,.scrollArtwork--1,.scrollArtwork--2{width:80vw;height:62svh;transform:translate3d(calc(var(--work-x)*.55),0,0)}.scrollManuscript{width:160%;margin-left:-30%}.scrollSignature{right:14px;bottom:55px;width:76px}.scrollLinks{bottom:20px;gap:15px;font-size:10px}}
+@media(prefers-reduced-motion:reduce){.scrollArtwork{transform:none}.scrollManuscript{transform:none}}
+.projectScrollSequence{height:260svh}.projectScrollSequenceSticky{position:sticky;top:0;height:90svh;display:flex;align-items:center;justify-content:center}.projectScrollSequenceSticky img{max-height:85svh;width:100%;object-fit:contain}
+
+/* Continuous horizontal exhibition */
+.horizontalPortfolio{--text-y:0px;overflow:clip}
+.horizontalStage{position:sticky;top:0;height:100svh;overflow:hidden;transition:filter .65s cubic-bezier(.22,1,.36,1),opacity .65s}
+.horizontalTrack{height:100%;position:relative;will-change:transform}
+.horizontalArtwork{position:absolute;display:block;transform:translateY(-50%);max-height:76svh;border:0;border-radius:0;padding:0;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.horizontalArtwork img,.horizontalArtwork video{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 24px color-mix(in srgb,var(--scroll-ink) 55%,transparent))}
+.horizontalArtwork:focus-visible{outline:1px solid var(--scroll-ink);outline-offset:8px}
+.scrollLinks a,.scrollSignature{color:var(--scroll-ink);transition:color .1s linear}
+.scrollSignature{width:168px}.scrollSignature img,.scrollSignature svg{max-height:72px}
+.scrollSignatureMask{display:block;width:100%;aspect-ratio:175/58;background:currentColor;mask-size:contain;mask-position:center;mask-repeat:no-repeat;-webkit-mask-size:contain;-webkit-mask-position:center;-webkit-mask-repeat:no-repeat}
+.horizontalPortfolio.isProjectOpen .horizontalStage{filter:blur(20px);opacity:.65}
+.horizontalPortfolio .scrollBackdrop{transition:filter .65s}.horizontalPortfolio.isProjectOpen .scrollBackdrop{filter:blur(12px)}
+.artistProjectClose{top:max(22px,env(safe-area-inset-top));right:max(24px,env(safe-area-inset-right));width:auto;min-width:118px;height:46px;padding:0 18px;display:flex;align-items:center;justify-content:center;gap:13px;border:1px solid rgba(255,255,255,.45);border-radius:24px;background:rgba(255,255,255,.24);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:none;font:12px/1 Arial,sans-serif;letter-spacing:.02em;color:#303038;transition:background .25s,transform .3s}
+.artistProjectClose svg{width:16px;height:16px;transition:transform .35s}.artistProjectClose:hover{background:rgba(255,255,255,.65);border-color:rgba(255,255,255,.65);transform:translateY(-2px)}.artistProjectClose:hover svg{transform:rotate(90deg)}.artistProjectClose:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+@media(max-width:700px){.scrollSignature{width:121.6px;bottom:57px}.horizontalArtwork{max-height:68svh}.artistProjectClose{top:15px;right:15px;min-width:106px;height:42px}}
+@media(prefers-reduced-motion:reduce){.horizontalStage,.horizontalPortfolio .scrollBackdrop,.artistProjectClose,.artistProjectClose svg{transition:none}}
+
+/* Large works unfolding in depth along individual trajectories. */
+.horizontalArtwork{max-height:none;backface-visibility:hidden;will-change:transform,opacity}
+.horizontalArtwork img,.horizontalArtwork video{filter:drop-shadow(0 12px 28px color-mix(in srgb,var(--scroll-ink) 40%,transparent))}
+@media(max-width:700px){.horizontalArtwork{max-height:80svh}}
+@media(prefers-reduced-motion:reduce){.horizontalArtwork{transform:translateY(-50%) !important;opacity:1 !important;will-change:auto}}

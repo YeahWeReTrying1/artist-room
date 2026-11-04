@@ -22,7 +22,9 @@ import {
   INTRO_ROW_SPAN,
   resolveProjectGrid
 } from "@/lib/grid";
-import { canOpenProject } from "@/lib/projectAccess";
+import { ArtistImage } from "@/components/ArtistImage";
+import { fullMediaUrl, mediaAsset, warmMedia } from "@/lib/mediaAssets";
+import { getProjectGallery, canOpenProject } from "@/lib/projectAccess";
 import { sortProjectsForFeed } from "@/lib/projectOrder";
 import { ROOM_ZONE_META, type AboutData, type Project } from "@/lib/types";
 
@@ -105,7 +107,9 @@ export function HomeContent({ projects, about }: Props) {
       const meta = ROOM_ZONE_META.find((item) => item.key === zone.key);
       return {
         id: zone.id,
-        src: zone.src,
+        src: fullMediaUrl(zone.src),
+        width: mediaAsset(zone.src)?.width,
+        height: mediaAsset(zone.src)?.height,
         title: zone.label || meta?.label || zone.key,
         caption: ""
       };
@@ -115,7 +119,9 @@ export function HomeContent({ projects, about }: Props) {
       .filter((project) => project.preview && !isVideoPreview(project.preview))
       .map((project) => ({
         id: project.id,
-        src: project.preview,
+        src: fullMediaUrl(project.preview),
+        width: mediaAsset(project.preview)?.width,
+        height: mediaAsset(project.preview)?.height,
         title: project.title || "",
         caption: ""
       }));
@@ -135,8 +141,8 @@ export function HomeContent({ projects, about }: Props) {
     const startRect = img.getBoundingClientRect();
     const openIndex = lightboxItems.findIndex((item) => item.id === id);
     if (openIndex < 0) return;
-    const naturalWidth = img.naturalWidth || startRect.width;
-    const naturalHeight = img.naturalHeight || startRect.height;
+    const naturalWidth = lightboxItems[openIndex].width || img.naturalWidth || startRect.width;
+    const naturalHeight = lightboxItems[openIndex].height || img.naturalHeight || startRect.height;
     const targetRect = fitIntoViewport(naturalWidth, naturalHeight);
 
     setZoom({
@@ -268,7 +274,7 @@ export function HomeContent({ projects, about }: Props) {
                   onClick={(event) => openZoom(zone.id, event)}
                   aria-label={`Открыть крупнее: ${label}`}
                 >
-                  <img src={zone.src} alt={label} loading="lazy" />
+                  <ArtistImage src={zone.src} alt={label} />
                 </button>
                 <figcaption className="handCaption">{label}</figcaption>
               </figure>
@@ -321,18 +327,27 @@ export function HomeContent({ projects, about }: Props) {
                 className={`gridProjectMedia${isGifPreview(project.preview) ? " isGifPreview" : ""}${
                   project.mediaFit === "contain" ? " isMediaContain" : ""
                 }`}
+                style={
+                  {
+                    ["--preview-radius"]:
+                      Number(project.previewRadius) > 0 ? `${Math.round(Number(project.previewRadius))}px` : "0px"
+                  } as CSSProperties
+                }
               >
                 {openable ? (
                   <button
                     type="button"
                     className="gridProjectZoomButton"
                     onClick={() => setOpenProjectId(project.id)}
+                    onPointerEnter={() => { const first = getProjectGallery(project)[0]; if (first) warmMedia(first.src); }}
+                    onFocus={() => { const first = getProjectGallery(project)[0]; if (first) warmMedia(first.src); }}
+                    onPointerDown={() => { const first = getProjectGallery(project)[0]; if (first) warmMedia(first.src); }}
                     aria-label={`Открыть проект: ${project.title || "работа"}`}
                   >
                     {isVideoPreview(project.preview) ? (
                       <video src={project.preview} autoPlay loop muted playsInline preload="metadata" />
                     ) : (
-                      <img src={project.preview} alt={project.title || "работа"} />
+                      <ArtistImage src={project.preview} alt={project.title || "работа"} loading={feedIndex < 2 ? "eager" : "lazy"} fetchPriority={feedIndex < 2 ? "high" : "auto"} sizes={`(max-width: 900px) calc(100vw - 24px), ${Math.ceil(grid.colSpan / 7 * 100)}vw`} />
                     )}
                   </button>
                 ) : canZoom ? (
@@ -343,12 +358,12 @@ export function HomeContent({ projects, about }: Props) {
                     onClick={(event) => openZoom(project.id, event)}
                     aria-label={`Открыть крупнее: ${project.title || "работа"}`}
                   >
-                    <img src={project.preview} alt={project.title || "работа"} />
+                    <ArtistImage src={project.preview} alt={project.title || "работа"} loading={feedIndex < 2 ? "eager" : "lazy"} fetchPriority={feedIndex < 2 ? "high" : "auto"} sizes={`(max-width: 900px) calc(100vw - 24px), ${Math.ceil(grid.colSpan / 7 * 100)}vw`} />
                   </button>
                 ) : isVideoPreview(project.preview) ? (
                   <video src={project.preview} autoPlay loop muted playsInline preload="metadata" />
                 ) : (
-                  <img src={project.preview} alt={project.title || "работа"} />
+                  <ArtistImage src={project.preview} alt={project.title || "работа"} loading={feedIndex < 2 ? "eager" : "lazy"} fetchPriority={feedIndex < 2 ? "high" : "auto"} sizes={`(max-width: 900px) calc(100vw - 24px), ${Math.ceil(grid.colSpan / 7 * 100)}vw`} />
                 )}
               </div>
               {project.title ? (
@@ -357,6 +372,9 @@ export function HomeContent({ projects, about }: Props) {
                     type="button"
                     className="gridProjectTitle gridProjectTitleBtn"
                     onClick={() => setOpenProjectId(project.id)}
+                    onPointerEnter={() => { const first = getProjectGallery(project)[0]; if (first) warmMedia(first.src); }}
+                    onFocus={() => { const first = getProjectGallery(project)[0]; if (first) warmMedia(first.src); }}
+                    onPointerDown={() => { const first = getProjectGallery(project)[0]; if (first) warmMedia(first.src); }}
                   >
                     {project.title}
                   </button>

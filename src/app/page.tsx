@@ -1,4 +1,4 @@
-import { HomeContent } from "@/components/HomeContent";
+import { ScrollPortfolio } from "@/components/ScrollPortfolio";
 import { sortProjectsForFeed } from "@/lib/projectOrder";
 import { mapAboutForSite, mapProjectForSite } from "@/lib/siteAssets";
 import { getAbout, getProjects } from "@/lib/storage";
@@ -9,5 +9,5 @@ export default async function HomePage() {
     projects.filter((project) => project.published && !project.archived)
   ).map(mapProjectForSite);
 
-  return <HomeContent projects={publishedProjects} about={mapAboutForSite(about)} />;
+  return <ScrollPortfolio projects={publishedProjects} about={mapAboutForSite(about)} />;
 }

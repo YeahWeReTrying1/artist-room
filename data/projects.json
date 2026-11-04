@@ -5,63 +5,72 @@
     "title": "пятничные наброски у Киры и Вари / 27 сентября 2024",
     "description": "Рисовали Марину и Максима",
     "preview": "/uploads/de8273dc-936e-4ba9-91f1-b7bec54a594e.gif",
-    "detailsEnabled": true,
+    "detailsEnabled": false,
     "published": true,
     "archived": false,
     "media": [
       {
         "id": "4bdb408e-0485-41ac-8d5f-3b81dbbcbf2d",
         "kind": "image",
-        "src": "/uploads/1ce85460-126f-4b4c-b78e-20f83e02672b.jpg",
-        "caption": ""
+        "src": "/uploads/1ce85460-126f-4b4c-b78e-20f83e02672b.full.webp",
+        "caption": "",
+        "blurSrc": "/uploads/1ce85460-126f-4b4c-b78e-20f83e02672b.blur.webp"
       },
       {
         "id": "d0837e53-8853-44fe-83eb-7e532584b38b",
         "kind": "image",
-        "src": "/uploads/26d718c4-f4a4-4538-ab5f-7b4e03a07df0.jpg",
-        "caption": ""
+        "src": "/uploads/26d718c4-f4a4-4538-ab5f-7b4e03a07df0.full.webp",
+        "caption": "",
+        "blurSrc": "/uploads/26d718c4-f4a4-4538-ab5f-7b4e03a07df0.blur.webp"
       },
       {
         "id": "12ca0f7b-d9b8-41e0-996d-8d4151776544",
         "kind": "image",
-        "src": "/uploads/0fcc7c74-62b2-4063-8c97-a75a7de753d3.jpg",
-        "caption": ""
+        "src": "/uploads/0fcc7c74-62b2-4063-8c97-a75a7de753d3.full.webp",
+        "caption": "",
+        "blurSrc": "/uploads/0fcc7c74-62b2-4063-8c97-a75a7de753d3.blur.webp"
       },
       {
         "id": "7fbff89c-8cfa-428d-b5f4-8ad7087cfd45",
         "kind": "image",
-        "src": "/uploads/3d244bd7-2aee-40c2-a7ab-35e7a7998d9c.jpg",
-        "caption": ""
+        "src": "/uploads/3d244bd7-2aee-40c2-a7ab-35e7a7998d9c.full.webp",
+        "caption": "",
+        "blurSrc": "/uploads/3d244bd7-2aee-40c2-a7ab-35e7a7998d9c.blur.webp"
       },
       {
         "id": "0aa52407-613b-4d0b-b3eb-432ee4721964",
         "kind": "image",
-        "src": "/uploads/c3f36e02-0240-45c5-aa61-5bacca342d80.jpg",
-        "caption": ""
+        "src": "/uploads/c3f36e02-0240-45c5-aa61-5bacca342d80.full.webp",
+        "caption": "",
+        "blurSrc": "/uploads/c3f36e02-0240-45c5-aa61-5bacca342d80.blur.webp"
       },
       {
         "id": "5db29901-098c-4ce2-b4b5-3955a9795a05",
         "kind": "image",
-        "src": "/uploads/c529257d-62df-443b-a9d7-b29fe050c34a.jpg",
-        "caption": ""
+        "src": "/uploads/c529257d-62df-443b-a9d7-b29fe050c34a.full.webp",
+        "caption": "",
+        "blurSrc": "/uploads/c529257d-62df-443b-a9d7-b29fe050c34a.blur.webp"
       },
       {
         "id": "c09297ac-8a2b-4250-8d85-edb97b13f110",
         "kind": "image",
-        "src": "/uploads/99130c0a-e049-489f-9166-a62c5dc50d34.jpg",
-        "caption": ""
+        "src": "/uploads/99130c0a-e049-489f-9166-a62c5dc50d34.full.webp",
+        "caption": "",
+        "blurSrc": "/uploads/99130c0a-e049-489f-9166-a62c5dc50d34.blur.webp"
       },
       {
         "id": "ec6652dd-50bf-48c7-9f2e-ad5e32dc683f",
         "kind": "image",
-        "src": "/uploads/5be9bf3a-c9ca-4762-ad13-c2fcc94606a4.jpg",
-        "caption": ""
+        "src": "/uploads/5be9bf3a-c9ca-4762-ad13-c2fcc94606a4.full.webp",
+        "caption": "",
+        "blurSrc": "/uploads/5be9bf3a-c9ca-4762-ad13-c2fcc94606a4.blur.webp"
       },
       {
         "id": "fd071c69-233e-44e6-a383-96e60d4a8833",
         "kind": "image",
-        "src": "/uploads/2762288d-5b35-42c5-bbe7-1e8e1183647d.jpg",
-        "caption": ""
+        "src": "/uploads/2762288d-5b35-42c5-bbe7-1e8e1183647d.full.webp",
+        "caption": "",
+        "blurSrc": "/uploads/2762288d-5b35-42c5-bbe7-1e8e1183647d.blur.webp"
       }
     ],
     "richText": "",
@@ -75,7 +84,10 @@
       "rowSpan": 3
     },
     "layoutCustomized": true,
-    "manualOrder": 0
+    "manualOrder": 0,
+    "previews": [
+      "/uploads/de8273dc-936e-4ba9-91f1-b7bec54a594e.gif"
+    ]
   },
   {
     "id": "09398f7f-860d-4941-8f36-c4b25c5f31cc",
@@ -83,69 +95,79 @@
     "title": "Наброски в гостях у Киры",
     "description": "",
     "preview": "/uploads/ac325ce7-fa01-452a-8d9f-cd9484295b94.gif",
-    "detailsEnabled": true,
+    "detailsEnabled": false,
     "published": true,
     "archived": false,
     "media": [
       {
         "id": "650351f8-f5de-47fe-ad67-b98768333fb2",
         "kind": "image",
-        "src": "/uploads/1dbf4cae-2e9d-4e42-945c-59bcbe88f762.jpg",
-        "caption": ""
+        "src": "/uploads/1dbf4cae-2e9d-4e42-945c-59bcbe88f762.full.webp",
+        "caption": "",
+        "blurSrc": "/uploads/1dbf4cae-2e9d-4e42-945c-59bcbe88f762.blur.webp"
       },
       {
         "id": "ecca0b80-db95-4d30-a90a-3e2e6c0a9396",
         "kind": "image",
-        "src": "/uploads/68434202-0cfb-443b-91dc-7e3f5dea71cb.jpg",
-        "caption": ""
+        "src": "/uploads/68434202-0cfb-443b-91dc-7e3f5dea71cb.full.webp",
+        "caption": "",
+        "blurSrc": "/uploads/68434202-0cfb-443b-91dc-7e3f5dea71cb.blur.webp"
       },
       {
         "id": "406390a3-d7f3-44bc-8b8f-ef9d2da4e8db",
         "kind": "image",
-        "src": "/uploads/cb66087f-0a9b-4bf8-8e4b-e227d9b4899d.jpg",
-        "caption": ""
+        "src": "/uploads/cb66087f-0a9b-4bf8-8e4b-e227d9b4899d.full.webp",
+        "caption": "",
+        "blurSrc": "/uploads/cb66087f-0a9b-4bf8-8e4b-e227d9b4899d.blur.webp"
       },
       {
         "id": "3302dcd0-b164-4911-ab6e-ae336673cdca",
         "kind": "image",
-        "src": "/uploads/9c819a3d-fe18-48ee-874c-81aa93b9ad29.jpg",
-        "caption": ""
+        "src": "/uploads/9c819a3d-fe18-48ee-874c-81aa93b9ad29.full.webp",
+        "caption": "",
+        "blurSrc": "/uploads/9c819a3d-fe18-48ee-874c-81aa93b9ad29.blur.webp"
       },
       {
         "id": "4a0d4012-3147-40e5-9a63-63237fba7b68",
         "kind": "image",
-        "src": "/uploads/dfe50e87-01c8-425c-b06d-be27a9d315ce.jpg",
-        "caption": ""
+        "src": "/uploads/dfe50e87-01c8-425c-b06d-be27a9d315ce.full.webp",
+        "caption": "",
+        "blurSrc": "/uploads/dfe50e87-01c8-425c-b06d-be27a9d315ce.blur.webp"
       },
       {
         "id": "2e0beff4-1b21-47ad-a73a-15a0f1c4b2d7",
         "kind": "image",
-        "src": "/uploads/218453c5-84a2-469e-b040-1c232df41655.jpg",
-        "caption": ""
+        "src": "/uploads/218453c5-84a2-469e-b040-1c232df41655.full.webp",
+        "caption": "",
+        "blurSrc": "/uploads/218453c5-84a2-469e-b040-1c232df41655.blur.webp"
       },
       {
         "id": "e82cf368-66a5-4b29-ba1f-0d6b1fc297db",
         "kind": "image",
-        "src": "/uploads/e8359a5e-f586-4d16-89fb-66bc39b4a7c3.jpg",
-        "caption": ""
+        "src": "/uploads/e8359a5e-f586-4d16-89fb-66bc39b4a7c3.full.webp",
+        "caption": "",
+        "blurSrc": "/uploads/e8359a5e-f586-4d16-89fb-66bc39b4a7c3.blur.webp"
       },
       {
         "id": "3589f26b-8725-479a-a99b-ce643a6001b6",
         "kind": "image",
-        "src": "/uploads/983cf9ea-2bfd-4bc6-b02c-52edd7e33360.jpg",
-        "caption": ""
+        "src": "/uploads/983cf9ea-2bfd-4bc6-b02c-52edd7e33360.full.webp",
+        "caption": "",
+        "blurSrc": "/uploads/983cf9ea-2bfd-4bc6-b02c-52edd7e33360.blur.webp"
       },
       {
         "id": "c9383795-d895-48de-8166-d868f75ff9fd",
         "kind": "image",
-        "src": "/uploads/736c5975-3248-4809-a0df-90dd4f83c3e6.jpg",
-        "caption": ""
+        "src": "/uploads/736c5975-3248-4809-a0df-90dd4f83c3e6.full.webp",
+        "caption": "",
+        "blurSrc": "/uploads/736c5975-3248-4809-a0df-90dd4f83c3e6.blur.webp"
       },
       {
         "id": "f6d5ffbe-a046-4760-9f6b-2bb5c369e16a",
         "kind": "image",
-        "src": "/uploads/8d60fc87-ba15-4e5e-9ac1-5c964627fc48.jpg",
-        "caption": ""
+        "src": "/uploads/8d60fc87-ba15-4e5e-9ac1-5c964627fc48.full.webp",
+        "caption": "",
+        "blurSrc": "/uploads/8d60fc87-ba15-4e5e-9ac1-5c964627fc48.blur.webp"
       }
     ],
     "richText": "",
@@ -159,7 +181,10 @@
       "rowSpan": 3
     },
     "layoutCustomized": true,
-    "manualOrder": 1
+    "manualOrder": 1,
+    "previews": [
+      "/uploads/ac325ce7-fa01-452a-8d9f-cd9484295b94.gif"
+    ]
   },
   {
     "id": "dec57959-6c2c-4b42-b9e0-0821f201eeeb",

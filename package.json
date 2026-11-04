@@ -5,7 +5,9 @@
     "dev": "next dev --hostname 127.0.0.1 --port 3003",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "optimize:media": "node scripts/optimize-media.mjs",
+    "prebuild": "node scripts/optimize-media.mjs && node scripts/scroll-frames.mjs"
   },
   "dependencies": {
     "@fontsource/google-sans": "^5.2.1",
