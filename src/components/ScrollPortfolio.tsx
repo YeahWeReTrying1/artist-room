@@ -5,11 +5,20 @@ import { ArtistProjectOverlay } from "@/components/ArtistProjectOverlay";
 import { ArtistImage } from "@/components/ArtistImage";
 import { SiteLogo } from "@/components/SiteNav";
 import { publicUrl } from "@/lib/siteAssets";
-import { warmMedia } from "@/lib/mediaAssets";
+import { mediaAsset, warmMedia } from "@/lib/mediaAssets";
 import { scrollFrames, frameImageProps } from "@/lib/scrollFrames";
 const palettes=[['#c5c7d5','#faedf0'],['#d3cfc3','#edf8e8'],['#c2d5c5','#eee5ff']];
 const ScrollWork = memo(function ScrollWork({project,index,x,width,y,travel,onOpen}:{project:Project;index:number;x:number;width:number;y:number;travel:number;onOpen:(project:Project)=>void}){
- const frames=scrollFrames(project.preview);
+ const parts=(project.artistAspect||'').split('/').map(Number);
+ const ratio=parts.length===2&&parts.every(n=>Number.isFinite(n)&&n>0)?parts[0]/parts[1]:null;
+ const photos=useMemo(()=>{
+  const media=project.media.filter(item=>item.kind==='image'&&!/\.(gif|mp4|webm|mov|ogg)$/i.test(item.src)&&!mediaAsset(item.src)?.animated).map(item=>item.src);
+  // Gallery order is authoritative; a standalone photo cover remains a fallback.
+  return media.length?media:! /\.(gif|mp4|webm|mov|ogg)$/i.test(project.preview)&&!mediaAsset(project.preview)?.animated?[project.preview]:[];
+ },[project]);
+ const extracted=scrollFrames(project.preview);
+ const frames=photos.length?photos:extracted;
+ const photoSequence=photos.length>0;
  const screenX=x-travel;
  const near=screenX<160&&screenX+width>-60;
  const progress=Math.max(0,Math.min(1,(100-screenX)/(100+width)));
@@ -24,11 +33,11 @@ const ScrollWork = memo(function ScrollWork({project,index,x,width,y,travel,onOp
  const frame=Math.min(frames.length-1,Math.floor(progress*frames.length));
  useEffect(()=>{
   if(!near || !frames.length)return;
-  const timer=window.setTimeout(()=>{const src=frames[frame+1];if(src){const image=new Image();image.decoding='async';image.fetchPriority='low';image.sizes=`${width}vw`;image.srcset=frameImageProps(src).srcSet;image.src=src;}},200);
+  const timer=window.setTimeout(()=>{const src=frames[frame+1];if(src){const image=new Image();image.decoding='async';image.fetchPriority='low';image.sizes=`${width}vw`;if(photoSequence){warmMedia(src);}else{image.srcset=frameImageProps(src).srcSet;image.src=src;}}},200);
   return()=>clearTimeout(timer);
- },[frame,near,project.id,width]);
- return <button className="horizontalArtwork" style={{left:`${x}vw`,width:`${width}vw`,top:`${centerY}%`,height:`${height}svh`,transform,opacity:1-Math.pow(entry,3),transformOrigin:`${index%2?'20%':'80%'} ${direction<0?'100%':'0%'}` } as CSSProperties} onClick={()=>onOpen(project)} onPointerEnter={()=>warmMedia(project.media[0]?.src||project.preview)} aria-label={project.title?`Открыть проект: ${project.title}`:`Открыть работу ${index+1}`}>
- {frames.length ? <img {...(near?frameImageProps(frames[frame]):{})} sizes={`${width}vw`} fetchPriority={index===0?"high":"low"} alt={project.title||'Рисунок'} decoding="async" loading={index===0?'eager':'lazy'}/> : /\.(mp4|webm|mov)$/i.test(project.preview)?<video src={near?project.preview:undefined} controls playsInline preload="metadata"/>:near?<ArtistImage src={project.preview} alt={project.title||'Рисунок'} loading="eager" sizes={`${width}vw`}/>:null}
+ },[frame,near,project.id,width,photoSequence]);
+ return <button className="horizontalArtwork" style={{left:`${x}vw`,width:`${width}vw`,top:`${centerY}%`,height:ratio?`min(${width/(ratio||1)}vw, 84svh)`:`${height}svh`,...(ratio?{width:`min(${width}vw, ${84*ratio}svh)`,aspectRatio:String(ratio),'--art-fit':'cover'}:{}),transform,opacity:1-Math.pow(entry,3),transformOrigin:`${index%2?'20%':'80%'} ${direction<0?'100%':'0%'}` } as CSSProperties} onClick={()=>onOpen(project)} onPointerEnter={()=>warmMedia(project.media[0]?.src||project.preview)} aria-label={project.title?`Открыть проект: ${project.title}`:`Открыть работу ${index+1}`}>
+ {near && (photoSequence ? <ArtistImage src={frames[frame]} alt={project.title||'Рисунок'} loading="eager" fetchPriority={index===0?"high":"auto"} sizes={`${width}vw`}/> : frames.length ? <img {...frameImageProps(frames[frame])} sizes={`${width}vw`} fetchPriority={index===0?"high":"low"} alt={project.title||'Рисунок'} decoding="async" loading={index===0?'eager':'lazy'}/> : <span className="previewUnavailable">Добавьте фотографии в проект</span>)}
  </button>;
 });
 export function ScrollPortfolio({projects,about}:{projects:Project[];about:AboutData}){

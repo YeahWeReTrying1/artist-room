@@ -20,6 +20,7 @@ export type ProjectGrid = {
 };
 
 export type Project = {
+  artistAspect?: string;
   id: string;
   slug: string;
   title: string;
