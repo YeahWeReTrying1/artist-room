@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { ScrollGif } from "@/components/ScrollGif";
 import { ArtistImage } from "@/components/ArtistImage";
+import { publicUrl } from "@/lib/siteAssets";
 import { warmMedia } from "@/lib/mediaAssets";
 import type { Project } from "@/lib/types";
 import { getProjectGallery } from "@/lib/projectAccess";
@@ -50,7 +51,7 @@ export function ArtistProjectOverlay({ project, onClose }: Props) {
         onClick={onClose}
         aria-label="Закрыть"
       >
-        <span>закрыть</span><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m4 4 12 12M16 4 4 16" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg>
+        <img src={publicUrl("/cross.svg")} width={44} height={39} alt="" draggable={false} />
       </button>
       <div className="artistProjectScroll">
         <header className="artistProjectHeader">

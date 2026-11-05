@@ -1,9 +1,16 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { StrokeLoader } from "@/components/StrokeLoader";
 import { getLoader } from "@/lib/storage";
 
 const siteBasePath = (process.env.NEXT_PUBLIC_BASE_PATH || "").replace(/\/$/, "");
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#c5c7d5"
+};
 
 export const metadata: Metadata = {
   title: "Bobkov — творческое портфолио",
