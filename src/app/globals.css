@@ -2102,3 +2102,5 @@ html,body{background:var(--artist-page-bg)}
 
 /* Breathing room above project titles, including iOS safe areas. */
 .artistProjectScroll{padding-top:calc(48px + env(safe-area-inset-top,0px))}
+
+@media(max-width:700px){.artistProjectClose img{width:32px;height:auto}}

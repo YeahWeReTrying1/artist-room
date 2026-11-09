@@ -45,6 +45,16 @@ export function ScrollPortfolio({projects,about}:{projects:Project[];about:About
  const root=useRef<HTMLElement>(null);const manuscript=useRef<HTMLDivElement>(null);const [active,setActive]=useState<Project|null>(null);const [progress,setProgress]=useState(0);const [mobile,setMobile]=useState(false);
  useEffect(()=>{const query=matchMedia('(max-width:700px)');const update=()=>setMobile(query.matches);update();query.addEventListener('change',update);return()=>query.removeEventListener('change',update);},[]);
  const openProject=useCallback((project:Project)=>setActive(project),[]);
+ useEffect(()=>{
+  if(!mobile||active)return;
+  const el=root.current;if(!el)return;
+  let startX=0,startY=0,lastX=0;let axis: "x"|"y"|null=null;
+  const start=(event:TouchEvent)=>{if(event.touches.length!==1)return;startX=lastX=event.touches[0].clientX;startY=event.touches[0].clientY;axis=null;};
+  const move=(event:TouchEvent)=>{if(event.touches.length!==1)return;const touch=event.touches[0];const dx=touch.clientX-startX,dy=touch.clientY-startY;if(!axis&&Math.max(Math.abs(dx),Math.abs(dy))>8)axis=Math.abs(dx)>Math.abs(dy)*1.2?"x":"y";if(axis==="x"){if(event.cancelable)event.preventDefault();window.scrollBy(0,(lastX-touch.clientX)*1.15);}lastX=touch.clientX;};
+  el.addEventListener("touchstart",start,{passive:true});el.addEventListener("touchmove",move,{passive:false});
+  return()=>{el.removeEventListener("touchstart",start);el.removeEventListener("touchmove",move);};
+ },[mobile,active]);
+
  const layout=useMemo(()=>{let cursor=mobile?8:12;return projects.map((_,index)=>{const width=mobile?[86,94,82,96,88][index%5]:[64,48,72,53,78,58,68][index%7];const y=[44,72,25,64,41,78,30,58,22,75,46][index%11];const item={x:cursor,width,y};cursor+=width+[32,58,26,46,64,35,50][index%7];return item;});},[projects,mobile]);
  const last=layout[layout.length-1];const distance=last?Math.max(0,last.x+last.width-82):0;
  // Half the scroll distance for a single image; gallery tempo stays unchanged.
@@ -65,6 +75,7 @@ export function ScrollPortfolio({projects,about}:{projects:Project[];about:About
   let raf=0;let target=0;let current=0;let lastTime=0;let disposed=false;
   const page=document.documentElement;
   const previousColor=page.style.getPropertyValue('--artist-page-bg');
+  const previousBodyBackground=document.body.style.backgroundColor;
   const themeMeta=document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
   const previousTheme=themeMeta?.content;
   const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -83,6 +94,7 @@ export function ScrollPortfolio({projects,about}:{projects:Project[];about:About
    const background=blend(palettes[i][0],palettes[i+1][0]);
    el.style.setProperty('--scroll-bg',background);
    page.style.setProperty('--artist-page-bg',background);
+   document.body.style.backgroundColor=background;
    if(themeMeta&&themeMeta.content!==background)themeMeta.content=background;
    el.style.setProperty('--scroll-ink',blend(palettes[i][1],palettes[i+1][1]));
    el.style.setProperty('--text-y',`${-Math.pow(current,1.35)*Math.max(0,(manuscript.current?.offsetHeight||0)-innerHeight)}px`);
@@ -90,7 +102,7 @@ export function ScrollPortfolio({projects,about}:{projects:Project[];about:About
   };
   const update=()=>{const el=root.current;if(!el)return;target=Math.max(0,Math.min(1,-el.getBoundingClientRect().top/Math.max(1,el.offsetHeight-innerHeight)));if(!raf){lastTime=0;raf=requestAnimationFrame(render);}};
   update();addEventListener('scroll',update,{passive:true});addEventListener('resize',update);
-  return()=>{disposed=true;cancelAnimationFrame(raf);removeEventListener('scroll',update);removeEventListener('resize',update);if(previousColor)page.style.setProperty('--artist-page-bg',previousColor);else page.style.removeProperty('--artist-page-bg');if(themeMeta&&previousTheme)themeMeta.content=previousTheme;};
+  return()=>{disposed=true;cancelAnimationFrame(raf);removeEventListener('scroll',update);removeEventListener('resize',update);if(previousColor)page.style.setProperty('--artist-page-bg',previousColor);else page.style.removeProperty('--artist-page-bg');document.body.style.backgroundColor=previousBodyBackground;if(themeMeta&&previousTheme)themeMeta.content=previousTheme;};
  },[distance,timeline]);
  return <main ref={root} className={`scrollPortfolio horizontalPortfolio${active?' isProjectOpen':''}`} style={{height:`calc(100svh + ${timeline.length}vw)`}}><div className="scrollBackdrop" aria-hidden="true"><div ref={manuscript} className="scrollManuscript">{['01','02','03','04'].map(n=><div key={n} className="scrollManuscriptSheet" style={{maskImage:`url("${publicUrl('/scroll-text/'+n+'.svg')}")`,WebkitMaskImage:`url("${publicUrl('/scroll-text/'+n+'.svg')}")`}}/>)}</div></div>
  <div className="horizontalStage"><div className="horizontalTrack" style={{transform:`translate3d(${-progress*distance}vw,0,0)`}}>{projects.map((project,index)=><ScrollWork key={project.id} project={project} index={index} {...layout[index]} travel={progress*distance} onOpen={openProject}/>)}</div></div>
