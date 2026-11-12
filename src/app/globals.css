@@ -2104,3 +2104,7 @@ html,body{background:var(--artist-page-bg)}
 .artistProjectScroll{padding-top:calc(48px + env(safe-area-inset-top,0px))}
 
 @media(max-width:700px){.artistProjectClose img{width:32px;height:auto}}
+.artistProjectOverlay{background:#000;backdrop-filter:none;-webkit-backdrop-filter:none;color:#fff}
+.artistProjectTitle,.artistProjectDescription,.artistProjectCaption{color:#fff}
+.artistProjectCloseIcon{display:block;width:44px;height:39px;background:var(--scroll-bg,var(--artist-page-bg,#c5c7d5));mask-size:contain;mask-position:center;mask-repeat:no-repeat;-webkit-mask-size:contain;-webkit-mask-position:center;-webkit-mask-repeat:no-repeat}
+@media(max-width:700px){.artistProjectCloseIcon{width:32px;height:29px}.artistProjectScroll{padding-left:12px;padding-right:12px}.artistProjectStack{gap:24px}}

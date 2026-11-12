@@ -51,7 +51,7 @@ export function ArtistProjectOverlay({ project, onClose }: Props) {
         onClick={onClose}
         aria-label="Закрыть"
       >
-        <img src={publicUrl("/cross.svg")} width={44} height={39} alt="" draggable={false} />
+        <span className="artistProjectCloseIcon" aria-hidden="true" style={{ maskImage: `url("${publicUrl("/cross.svg")}")`, WebkitMaskImage: `url("${publicUrl("/cross.svg")}")` }} />
       </button>
       <div className="artistProjectScroll">
         <header className="artistProjectHeader">
