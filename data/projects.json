@@ -930,7 +930,7 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 22
+    "manualOrder": 27
   },
   {
     "id": "68ebd44c-a678-4527-8470-e8823e06a0cd",
@@ -1053,7 +1053,7 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 11
+    "manualOrder": 18
   },
   {
     "id": "4c6d45d6-4f50-4e1a-aa0d-f5e0469dec58",
@@ -1116,7 +1116,7 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 24
+    "manualOrder": 29
   },
   {
     "id": "7eb8330d-2bc8-45db-b8ab-0353cdb78483",
@@ -1191,7 +1191,7 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 25
+    "manualOrder": 30
   },
   {
     "id": "41bd4cd4-ac62-4c61-8ce3-b93988af1005",
@@ -1211,7 +1211,7 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 23
+    "manualOrder": 28
   },
   {
     "id": "1c92c65b-777e-46b0-abf9-966df211d4e2",
@@ -1231,7 +1231,7 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 27
+    "manualOrder": 32
   },
   {
     "id": "3d3abfc2-3a66-49e0-a240-849a549bb64b",
@@ -1251,7 +1251,7 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 26
+    "manualOrder": 31
   },
   {
     "id": "ec1033bd-eaf8-4f1a-a892-535f460123e8",
@@ -1271,7 +1271,7 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 28
+    "manualOrder": 33
   },
   {
     "id": "59389f30-06c7-4522-adf8-7d2ccd890485",
@@ -1291,7 +1291,7 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 29
+    "manualOrder": 34
   },
   {
     "id": "35843a27-68ee-4205-ba5f-67642914f685",
@@ -1311,7 +1311,7 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 32
+    "manualOrder": 37
   },
   {
     "id": "442da2cd-e5f4-4f83-aba8-8bfaa2ba32f9",
@@ -1440,7 +1440,7 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 13
+    "manualOrder": 22
   },
   {
     "id": "b54e5d90-686d-4cb2-ad53-70d5bbbed41f",
@@ -1569,7 +1569,7 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 30
+    "manualOrder": 35
   },
   {
     "id": "e24052db-9e58-4d1f-8b4c-cb4b080c33f6",
@@ -1618,7 +1618,7 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 31
+    "manualOrder": 36
   },
   {
     "id": "5464944a-f47e-41f8-85ba-2fd70f06e3e8",
@@ -1638,7 +1638,7 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 33
+    "manualOrder": 38
   },
   {
     "id": "fe8d3d7d-2937-4194-8539-185d79eb1eef",
@@ -1713,7 +1713,7 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 12
+    "manualOrder": 21
   },
   {
     "id": "43974e81-e7c5-4e53-a6af-4ab811fa3e31",
@@ -1733,7 +1733,7 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 34
+    "manualOrder": 39
   },
   {
     "id": "19d21f0a-39c2-42fc-82e0-29f90f0d4051",
@@ -1753,7 +1753,7 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 21
+    "manualOrder": 26
   },
   {
     "id": "221d0ffa-e9af-46c8-bd1e-613621943114",
@@ -1773,7 +1773,7 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 16
+    "manualOrder": 24
   },
   {
     "id": "dfc675ff-9d36-446c-9ea1-70211c48710d",
@@ -1793,7 +1793,7 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 35
+    "manualOrder": 40
   },
   {
     "id": "1cb09613-88ca-4598-abb3-1eb0dbc07aaa",
@@ -1946,7 +1946,7 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 14
+    "manualOrder": 23
   },
   {
     "id": "99ba4769-066b-4982-9a4c-4b8afaa3796d",
@@ -2051,6 +2051,441 @@
     "structuredBlocks": [],
     "projectType": "shot",
     "caseBlocks": [],
-    "manualOrder": 18
+    "manualOrder": 25
+  },
+  {
+    "id": "55495156-4f8e-43a6-a3e8-1386700d8444",
+    "slug": "album-1794521516242-spq5",
+    "title": "",
+    "description": "",
+    "preview": "/uploads/236b0c39-cf12-4bce-8b94-89ac6e7d3a64.jpg",
+    "previews": [
+      "/uploads/236b0c39-cf12-4bce-8b94-89ac6e7d3a64.jpg"
+    ],
+    "projectUrl": "",
+    "detailsEnabled": true,
+    "published": true,
+    "archived": false,
+    "media": [
+      {
+        "id": "1fd8af8d-2b1f-4462-b84a-395cc49c1ccc",
+        "kind": "image",
+        "src": "/uploads/236b0c39-cf12-4bce-8b94-89ac6e7d3a64.jpg",
+        "caption": ""
+      },
+      {
+        "id": "2a94b773-ba9f-477a-b51c-b43a1e1519a3",
+        "kind": "image",
+        "src": "/uploads/7b6f3468-c5e7-4d9c-80d3-8d0c3159c3b6.jpg",
+        "caption": ""
+      },
+      {
+        "id": "d79ccb4a-935b-4007-80a6-a34f1a1dbd3b",
+        "kind": "image",
+        "src": "/uploads/3c8f58ff-9e49-4b3b-b300-03b5ca5f0ff8.jpg",
+        "caption": ""
+      },
+      {
+        "id": "db2ff65c-14fb-4bf8-8fa0-43a3e43d2c1f",
+        "kind": "image",
+        "src": "/uploads/c073f02c-c21e-4f27-bffe-3123f7f74592.jpg",
+        "caption": ""
+      },
+      {
+        "id": "ba4b892a-2e97-4b20-a69b-46305fd1f79d",
+        "kind": "image",
+        "src": "/uploads/73837cda-38b4-4753-b739-96424e9c2e0c.jpg",
+        "caption": ""
+      },
+      {
+        "id": "64e65275-af82-4cf8-a140-f2097b11cafd",
+        "kind": "image",
+        "src": "/uploads/dbdda160-d9ca-42f1-966c-437197daf3f7.jpg",
+        "caption": ""
+      },
+      {
+        "id": "ae848d48-5c6b-48c5-9f96-43de6cbac60e",
+        "kind": "image",
+        "src": "/uploads/07c01e6d-835e-4019-9060-a7977ffdb2e4.png",
+        "caption": ""
+      },
+      {
+        "id": "4c58a686-c1df-4941-a9d5-8c7a01e03529",
+        "kind": "image",
+        "src": "/uploads/232bd024-a3c4-45a4-a663-80636e58b99e.png",
+        "caption": ""
+      },
+      {
+        "id": "1ee4508f-f88e-4ba4-978a-52ddbf59292f",
+        "kind": "image",
+        "src": "/uploads/0ade952e-ca40-4a72-b2ee-e355f0fe66c2.jpg",
+        "caption": ""
+      },
+      {
+        "id": "310b5c02-114f-45c0-8756-63295968bb93",
+        "kind": "image",
+        "src": "/uploads/64b0ccff-7539-4d78-b395-e6f3e6394a63.png",
+        "caption": ""
+      },
+      {
+        "id": "60f37089-a0c6-4d78-885a-10d3799d016a",
+        "kind": "image",
+        "src": "/uploads/3db72766-5e34-4011-ab7f-68df5c753d8b.jpg",
+        "caption": ""
+      },
+      {
+        "id": "9ce09424-a00b-4914-8a66-6aed94b2eaee",
+        "kind": "image",
+        "src": "/uploads/13d21a76-9e59-478f-8112-3c88cb2ad3c1.png",
+        "caption": ""
+      },
+      {
+        "id": "8c78b978-c1fd-4a70-91f7-9c6f6b5e69f0",
+        "kind": "image",
+        "src": "/uploads/5a5552d1-f6fd-4ea4-8bf1-d0c3dc6bd0ef.jpg",
+        "caption": ""
+      },
+      {
+        "id": "f9367ec4-1ced-4931-89ea-dd7cc8a3fc20",
+        "kind": "image",
+        "src": "/uploads/b2a82ace-5593-4309-9386-3818bb1c4bf4.png",
+        "caption": ""
+      },
+      {
+        "id": "055303ae-f6a5-4891-bb44-5556dbc28d58",
+        "kind": "image",
+        "src": "/uploads/8ff33063-ccfd-48a1-b880-3842e3ad140a.png",
+        "caption": ""
+      },
+      {
+        "id": "3f11415b-4f29-4c5c-842d-8c05b857a7a2",
+        "kind": "image",
+        "src": "/uploads/fcd1bf9a-29f0-48c1-9c78-348a92808c27.png",
+        "caption": ""
+      },
+      {
+        "id": "774c0ab2-1cbe-425b-a474-632b8d7207f6",
+        "kind": "image",
+        "src": "/uploads/b9d5d89a-fb1f-431f-81c1-9f24cd52bb7d.jpg",
+        "caption": ""
+      },
+      {
+        "id": "15bcebc4-315c-4dc7-afbd-95fbf6dda25c",
+        "kind": "image",
+        "src": "/uploads/1bc20fa1-017b-4faf-8509-9814393fe541.jpg",
+        "caption": ""
+      }
+    ],
+    "richText": "",
+    "structuredBlocks": [],
+    "projectType": "shot",
+    "caseBlocks": [],
+    "manualOrder": 11
+  },
+  {
+    "id": "b4075bdb-57eb-430d-bf2e-3eccd567b98c",
+    "slug": "album-1794521570231-yw00",
+    "title": "",
+    "description": "",
+    "preview": "/uploads/1b81170c-af34-448f-829d-206f15bf885d.jpg",
+    "previews": [
+      "/uploads/1b81170c-af34-448f-829d-206f15bf885d.jpg"
+    ],
+    "projectUrl": "",
+    "detailsEnabled": true,
+    "published": true,
+    "archived": false,
+    "media": [
+      {
+        "id": "f34d06f7-c0fb-4f57-957f-0a007e28a618",
+        "kind": "image",
+        "src": "/uploads/1b81170c-af34-448f-829d-206f15bf885d.jpg",
+        "caption": ""
+      },
+      {
+        "id": "26351f0b-7ea2-402a-b4f6-ffc251a588d9",
+        "kind": "image",
+        "src": "/uploads/2ba05791-b55c-4106-8a91-1d7b40107b16.jpg",
+        "caption": ""
+      },
+      {
+        "id": "5664c73c-66eb-47aa-8474-7a9125485498",
+        "kind": "image",
+        "src": "/uploads/eb9dee24-8515-4c49-acd0-73c7863ee5f3.jpg",
+        "caption": ""
+      },
+      {
+        "id": "0c94eebd-d3f9-413e-b9f0-9a07c49e4b8d",
+        "kind": "image",
+        "src": "/uploads/e476dfaf-b4c6-4875-9e2d-9da7eae45919.jpg",
+        "caption": ""
+      },
+      {
+        "id": "a39e53f7-a58b-47f3-a3fd-6b6bcf8d2b16",
+        "kind": "image",
+        "src": "/uploads/e8dc9526-b5de-4f23-9241-3b34de22a737.jpg",
+        "caption": ""
+      },
+      {
+        "id": "1735d7df-f0a3-457f-b630-b647a0919c7b",
+        "kind": "image",
+        "src": "/uploads/882926e9-aaa6-4794-96b0-ac1fcb746de3.jpg",
+        "caption": ""
+      },
+      {
+        "id": "38a59713-8c0f-4657-b417-424cb859cfd0",
+        "kind": "image",
+        "src": "/uploads/699b09e7-b4e5-494f-b08d-c330f51f01b7.jpg",
+        "caption": ""
+      },
+      {
+        "id": "aa2f5d03-eb53-4261-959a-78be55f614f3",
+        "kind": "image",
+        "src": "/uploads/f9c3b8ac-538f-405f-8f4d-018ce30f9bb0.jpg",
+        "caption": ""
+      },
+      {
+        "id": "593d0aec-ae82-4bd2-8b7e-8d7bbb964bb0",
+        "kind": "image",
+        "src": "/uploads/7f7a1bcf-47d8-4468-b89d-b29f8a01cd6b.png",
+        "caption": ""
+      },
+      {
+        "id": "b7ea74ae-4e01-4c88-a972-d54a43521638",
+        "kind": "image",
+        "src": "/uploads/70c26d83-5917-428d-84a1-d7675945fe65.jpg",
+        "caption": ""
+      },
+      {
+        "id": "d4b645a9-e611-4baf-941f-6b9075901d3a",
+        "kind": "image",
+        "src": "/uploads/782ab4b0-33dd-4580-a3d0-7bd25034b8b2.jpg",
+        "caption": ""
+      },
+      {
+        "id": "c2ecd426-3b89-4bf1-b1f6-27082dbddae5",
+        "kind": "image",
+        "src": "/uploads/8cdfd276-c55d-41fe-9b94-0bf0da43def1.jpg",
+        "caption": ""
+      },
+      {
+        "id": "e61ce991-6e27-4df0-926e-2735b53405eb",
+        "kind": "image",
+        "src": "/uploads/99075220-bbfa-4d9a-991f-59b80b2ab877.jpg",
+        "caption": ""
+      },
+      {
+        "id": "b5dcb5d1-2e9a-4093-a9ac-d7af06805178",
+        "kind": "image",
+        "src": "/uploads/dd523380-a8d1-445d-8c73-01fc0714f689.jpg",
+        "caption": ""
+      },
+      {
+        "id": "c4512af9-c09c-4d8b-864d-90b20691f1e0",
+        "kind": "image",
+        "src": "/uploads/95866f57-f98a-4bbb-8c2d-fb497180d300.jpg",
+        "caption": ""
+      },
+      {
+        "id": "705b0e1e-f20d-40ff-a643-770d33de3766",
+        "kind": "image",
+        "src": "/uploads/aa4906a6-8469-4893-ac5d-27549d8ef114.jpg",
+        "caption": ""
+      },
+      {
+        "id": "83b7bea6-6fa0-4d9d-9946-1d8a41a414d3",
+        "kind": "image",
+        "src": "/uploads/d26f9057-c58a-499a-b67a-426d3b45f6b5.jpg",
+        "caption": ""
+      },
+      {
+        "id": "5b05eb07-238c-48be-8470-d8cfd6772109",
+        "kind": "image",
+        "src": "/uploads/ea3297fc-2d84-4d87-bc28-8b5bff936540.jpg",
+        "caption": ""
+      }
+    ],
+    "richText": "",
+    "structuredBlocks": [],
+    "projectType": "shot",
+    "caseBlocks": [],
+    "manualOrder": 12
+  },
+  {
+    "id": "33628d99-35e5-4387-9239-12902e042493",
+    "slug": "album-1794521629222-fjnh",
+    "title": "",
+    "description": "2026\nА4\nКарандаш, перо, тушь, фломастер",
+    "preview": "/uploads/dcc5e769-b93d-4c5f-9923-e7eb17a54cfd.jpg",
+    "previews": [
+      "/uploads/dcc5e769-b93d-4c5f-9923-e7eb17a54cfd.jpg"
+    ],
+    "projectUrl": "",
+    "detailsEnabled": true,
+    "published": true,
+    "archived": false,
+    "media": [
+      {
+        "id": "83342412-1e18-4a45-8ab3-be904d6c1bae",
+        "kind": "image",
+        "src": "/uploads/94304bcf-91d6-4325-b829-366d34273def.png",
+        "caption": ""
+      },
+      {
+        "id": "57f27161-a04e-4d1b-a087-7caa8f5f93d4",
+        "kind": "image",
+        "src": "/uploads/86257985-d57e-4290-9773-055b8715019e.jpg",
+        "caption": ""
+      },
+      {
+        "id": "cd18e9ab-7830-476e-b6eb-3f302839475b",
+        "kind": "image",
+        "src": "/uploads/614d97ce-c154-4e10-8fae-1200026bf482.jpg",
+        "caption": ""
+      },
+      {
+        "id": "11dad204-dba9-4eba-b033-60df0ad3c13b",
+        "kind": "image",
+        "src": "/uploads/6deaed3a-2519-4027-8e4c-01c744dc2f32.jpg",
+        "caption": ""
+      },
+      {
+        "id": "9389b06e-b267-4de3-b1b0-cb7e02b55702",
+        "kind": "image",
+        "src": "/uploads/aae9f3ad-4286-49cc-9516-86f907dd5f35.jpg",
+        "caption": ""
+      },
+      {
+        "id": "2f0ddb87-93a5-4404-ac9e-cef50e39d77f",
+        "kind": "image",
+        "src": "/uploads/6f05a6c1-8c5f-4e1c-a5ad-aef19c743d90.jpg",
+        "caption": "",
+        "colSpan": 1
+      },
+      {
+        "id": "17e8d9f2-ed1b-417c-ac82-9d606d973501",
+        "kind": "image",
+        "src": "/uploads/1214e42e-d6e2-4541-aa70-416d851e1946.png",
+        "caption": ""
+      },
+      {
+        "id": "3544cf68-8b97-45ea-8410-3f4a594ee610",
+        "kind": "image",
+        "src": "/uploads/2084fed3-576b-4812-8a03-43f2c5b318ae.jpg",
+        "caption": ""
+      },
+      {
+        "id": "92851899-a0f3-4c55-92be-eae49f42029b",
+        "kind": "image",
+        "src": "/uploads/4426ea40-56c2-4b24-93fb-422f70e704d7.png",
+        "caption": ""
+      },
+      {
+        "id": "9a92ce35-1c62-4fa8-b4f3-6080d499843b",
+        "kind": "image",
+        "src": "/uploads/40f0d627-d5ce-40c7-916b-847008a4667a.jpg",
+        "caption": ""
+      },
+      {
+        "id": "c452026f-6d49-4eb8-ae5d-6dbe08edaa63",
+        "kind": "image",
+        "src": "/uploads/cfa1e981-d894-4004-97c8-b3a82c2669e1.jpg",
+        "caption": ""
+      },
+      {
+        "id": "5fef7492-ab1a-49d4-9a3c-0b4a74392719",
+        "kind": "image",
+        "src": "/uploads/ad15c28e-8463-42a7-b88d-08a73ddd64a3.jpg",
+        "caption": ""
+      },
+      {
+        "id": "617748a5-add7-4053-b0cf-13ee9448a4e1",
+        "kind": "image",
+        "src": "/uploads/45cca626-d104-4f40-86c1-b0a7ec444f4d.jpg",
+        "caption": ""
+      }
+    ],
+    "richText": "",
+    "structuredBlocks": [],
+    "projectType": "shot",
+    "caseBlocks": [],
+    "manualOrder": 13
+  },
+  {
+    "id": "1e9eb4e8-fff8-4874-8224-f82b5d0af40b",
+    "slug": "album-1794521661560-4kr7",
+    "title": "",
+    "description": "",
+    "preview": "/uploads/4e9deee6-5fa2-4330-a2eb-d51d1871bc37.preview.webp",
+    "previews": [
+      "/uploads/4e9deee6-5fa2-4330-a2eb-d51d1871bc37.preview.webp"
+    ],
+    "projectUrl": "",
+    "detailsEnabled": true,
+    "published": true,
+    "archived": false,
+    "media": [
+      {
+        "id": "0789a0b1-cd41-4a15-82d8-4e011e21da8b",
+        "kind": "image",
+        "src": "/uploads/4e9deee6-5fa2-4330-a2eb-d51d1871bc37.full.webp",
+        "caption": "",
+        "blurSrc": "/uploads/4e9deee6-5fa2-4330-a2eb-d51d1871bc37.blur.webp"
+      },
+      {
+        "id": "42ecc6ea-10b8-43f4-a904-2eb9d9f816c7",
+        "kind": "image",
+        "src": "/uploads/89f81012-d3bb-4796-8357-2b60e4389d1e.full.webp",
+        "caption": "",
+        "blurSrc": "/uploads/89f81012-d3bb-4796-8357-2b60e4389d1e.blur.webp"
+      },
+      {
+        "id": "aca3f787-e968-4bc1-b9d8-9a8f18b3a9b2",
+        "kind": "image",
+        "src": "/uploads/e5bcc93c-be63-40c3-8583-49d854e29cbe.full.webp",
+        "caption": "",
+        "blurSrc": "/uploads/e5bcc93c-be63-40c3-8583-49d854e29cbe.blur.webp"
+      }
+    ],
+    "richText": "",
+    "structuredBlocks": [],
+    "projectType": "shot",
+    "caseBlocks": [],
+    "manualOrder": 14
+  },
+  {
+    "id": "cf3798d7-04ee-406f-91b8-efbc32a9baa0",
+    "slug": "album-1794522693024-2epi",
+    "title": "",
+    "description": "",
+    "preview": "/uploads/0b4d5d40-8df4-4c3a-aae4-c8ed67c99bff.preview.webp",
+    "previews": [
+      "/uploads/0b4d5d40-8df4-4c3a-aae4-c8ed67c99bff.preview.webp"
+    ],
+    "projectUrl": "",
+    "detailsEnabled": true,
+    "published": true,
+    "archived": false,
+    "media": [
+      {
+        "id": "e05331bf-5c6f-481e-8c3a-f44e9c248ab6",
+        "kind": "image",
+        "src": "/uploads/dc0ae574-d9a9-4769-9728-22ac9eaa69d6.png",
+        "caption": "",
+        "blurSrc": "/uploads/0b4d5d40-8df4-4c3a-aae4-c8ed67c99bff.blur.webp"
+      },
+      {
+        "id": "85459220-f17f-4b8c-b2bc-f167cdd47fb2",
+        "kind": "image",
+        "src": "/uploads/606601a2-5fbd-4668-99e8-05ec1a9cab98.png",
+        "caption": "",
+        "blurSrc": "/uploads/0d2cc11e-f427-43ae-b6fa-4ec1aed952e7.blur.webp"
+      }
+    ],
+    "richText": "",
+    "structuredBlocks": [],
+    "projectType": "shot",
+    "caseBlocks": [],
+    "manualOrder": 16
   }
 ]

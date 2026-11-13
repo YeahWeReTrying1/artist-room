@@ -94,8 +94,10 @@ export function ScrollPortfolio({projects,about}:{projects:Project[];about:About
    const background=blend(palettes[i][0],palettes[i+1][0]);
    el.style.setProperty('--scroll-bg',background);
    page.style.setProperty('--artist-page-bg',background);
-   document.body.style.backgroundColor=background;
-   if(themeMeta&&themeMeta.content!==background)themeMeta.content=background;
+   if(!page.dataset.artistProjectOpen){
+    document.body.style.backgroundColor=background;
+    if(themeMeta&&themeMeta.content!==background)themeMeta.content=background;
+   }
    el.style.setProperty('--scroll-ink',blend(palettes[i][1],palettes[i+1][1]));
    el.style.setProperty('--text-y',`${-Math.pow(current,1.35)*Math.max(0,(manuscript.current?.offsetHeight||0)-innerHeight)}px`);
    raf=current!==target?requestAnimationFrame(render):0;

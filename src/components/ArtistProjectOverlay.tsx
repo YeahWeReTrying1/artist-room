@@ -25,6 +25,26 @@ export function ArtistProjectOverlay({ project, onClose }: Props) {
   }, [project.id]);
 
   useEffect(() => {
+    const root = document.documentElement;
+    const meta = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
+    const previousTheme = meta?.content;
+    const previousBody = document.body.style.backgroundColor;
+    const previousRoot = root.style.backgroundColor;
+    root.dataset.artistProjectOpen = "true";
+    root.style.backgroundColor = "#000000";
+    document.body.style.backgroundColor = "#000000";
+    if (meta) meta.content = "#000000";
+    return () => {
+      delete root.dataset.artistProjectOpen;
+      root.style.backgroundColor = previousRoot;
+      const background = root.style.getPropertyValue("--artist-page-bg").trim();
+      document.body.style.backgroundColor = background || previousBody;
+      if (meta) meta.content = background || previousTheme || "#c5c7d5";
+    };
+  }, []);
+
+
+  useEffect(() => {
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     const onKey = (event: KeyboardEvent) => {
