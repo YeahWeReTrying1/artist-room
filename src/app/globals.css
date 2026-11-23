@@ -2071,7 +2071,7 @@ a.gridProjectTitle:hover {
 .horizontalArtwork{position:absolute;display:block;transform:translateY(-50%);max-height:76svh;border:0;border-radius:0;padding:0;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .horizontalArtwork img,.horizontalArtwork video{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 24px color-mix(in srgb,var(--scroll-ink) 55%,transparent))}
 .horizontalArtwork:focus-visible{outline:1px solid var(--scroll-ink);outline-offset:8px}
-.scrollLinks a,.scrollSignature{color:var(--scroll-ink);transition:color .1s linear}
+.scrollLinks a,.scrollLinks button,.scrollSignature{color:var(--scroll-ink);transition:color .1s linear}
 .scrollSignature{width:168px}.scrollSignature img,.scrollSignature svg{max-height:72px}
 .scrollSignatureMask{display:block;width:100%;aspect-ratio:175/58;background:currentColor;mask-size:contain;mask-position:center;mask-repeat:no-repeat;-webkit-mask-size:contain;-webkit-mask-position:center;-webkit-mask-repeat:no-repeat}
 .horizontalPortfolio.isProjectOpen .horizontalStage{filter:blur(20px);opacity:.65}
@@ -2108,3 +2108,134 @@ html,body{background:var(--artist-page-bg)}
 .artistProjectTitle,.artistProjectDescription,.artistProjectCaption{color:#fff}
 .artistProjectCloseIcon{display:block;width:44px;height:39px;background:var(--scroll-bg,var(--artist-page-bg,#c5c7d5));mask-size:contain;mask-position:center;mask-repeat:no-repeat;-webkit-mask-size:contain;-webkit-mask-position:center;-webkit-mask-repeat:no-repeat}
 @media(max-width:700px){.artistProjectCloseIcon{width:32px;height:29px}.artistProjectScroll{padding-left:12px;padding-right:12px}.artistProjectStack{gap:24px}}
+
+html[data-artist-project-open],
+html[data-artist-project-open] body,
+html:has(.artistProjectOverlay),
+body:has(.artistProjectOverlay) {
+  background: #000;
+  color-scheme: dark;
+}
+
+.horizontalPortfolio.isProjectOpen :is(.scrollBackdrop, .horizontalStage, .scrollLinks, .scrollSignature) {
+  visibility: hidden;
+}
+
+.scrollLinks button,
+.artistAboutNav button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.artistAboutNav button { color: inherit; }
+
+.scrollLinks button:hover,
+.scrollLinks button[aria-pressed="true"] {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.artistAbout {
+  min-height: 100svh;
+  padding: calc(28px + env(safe-area-inset-top)) 24px calc(56px + env(safe-area-inset-bottom));
+  background: #c5c7d5;
+  color: #24242b;
+}
+
+.artistAboutNav,
+.artistAboutText {
+  max-width: 680px;
+  margin-inline: auto;
+}
+
+.artistAboutNav {
+  display: flex;
+  justify-content: space-between;
+  font: 14px/1.4 Arial, sans-serif;
+}
+
+.artistAboutText {
+  margin-top: clamp(52px, 12svh, 120px);
+  font: clamp(18px, 2.5vw, 25px)/1.5 Arial, sans-serif;
+}
+
+.artistAboutText h1 {
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 400;
+  margin: 0 0 24px;
+}
+
+.artistAboutText p { white-space: pre-wrap; }
+.artistAboutText img { display: block; max-width: 100%; height: auto; margin-top: 24px; }
+
+.artistProjectScroll {
+  background: #000;
+}
+
+.artistProjectZoom {
+  position: absolute;
+  z-index: 5;
+  right: max(16px, env(safe-area-inset-right));
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 6px;
+  border-radius: 20px;
+  background: rgba(88, 88, 88, .58);
+  color: #fff;
+  font: 14px/1 Arial, sans-serif;
+  cursor: default;
+}
+
+.artistProjectZoom input {
+  writing-mode: vertical-lr;
+  direction: rtl;
+  width: 22px;
+  height: 94px;
+  margin: 0;
+  accent-color: #eee;
+  cursor: pointer;
+}
+
+.artistProjectFigure {
+  width: var(--artwork-width, 100%);
+  margin-inline: auto;
+}
+
+@media (min-width: 701px) {
+  .artistProjectFigure img,
+  .artistProjectFigure video {
+    max-height: var(--artwork-height);
+    object-fit: contain;
+  }
+
+  .projectScrollSequenceSticky img { max-height: min(85svh, var(--artwork-height)); }
+}
+
+@media (max-width: 700px) {
+  .artistProjectZoom {
+    top: auto;
+    right: auto;
+    left: 50%;
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    transform: translateX(-50%);
+    flex-direction: row;
+    padding: 6px 10px;
+    background: rgba(65, 65, 65, .48);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .artistProjectZoom input {
+    writing-mode: horizontal-tb;
+    direction: ltr;
+    width: 92px;
+    height: 24px;
+  }
+}

@@ -1,44 +1,33 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
+import { useArtistLanguage } from "@/components/ArtistLanguage";
+import { ArtistImage } from "@/components/ArtistImage";
 import type { AboutData } from "@/lib/types";
-import { publicUrl } from "@/lib/siteAssets";
+import { artistText } from "@/lib/artistTranslations";
 
 type Props = {
   about: AboutData;
 };
 
 export function AboutPageClient({ about }: Props) {
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    const onScroll = () => {
-      const max = document.body.scrollHeight - window.innerHeight;
-      const value = max <= 0 ? 0 : window.scrollY / max;
-      setProgress(value);
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const currentPhoto = useMemo(() => {
-    if (!about.photos.length) {
-      return publicUrl("/placeholder.svg");
-    }
-    const idx = Math.min(
-      about.photos.length - 1,
-      Math.floor(progress * about.photos.length)
-    );
-    return about.photos[idx];
-  }, [about.photos, progress]);
+  const { language, toggleLanguage } = useArtistLanguage();
+  const english = language === "en";
+  const telegram = about.links?.find(link => link.label.toLowerCase() === "telegram");
 
   return (
-    <main className="aboutWrap">
-      <section className="aboutInner">
-        <img className="aboutPhoto" src={currentPhoto} alt="Фото автора" />
-        <h1>{about.title}</h1>
-        <p>{about.text}</p>
+    <main className="artistAbout">
+      <nav className="artistAboutNav">
+        <Link href="/">{english ? "Portfolio" : "К работам"}</Link>
+        <button type="button" onClick={toggleLanguage} aria-label={english ? "Переключить на русский" : "Switch to English"}>{english ? "RU" : "EN"}</button>
+      </nav>
+      <section className="artistAboutText">
+        <h1 className="handCaption">{artistText(about.title, language)}</h1>
+        <p>{artistText(about.text, language)}</p>
+        {telegram && <a href={telegram.href} target="_blank" rel="noreferrer">{telegram.label}</a>}
+        {about.photos.map((src, index) => (
+          <ArtistImage key={`${src}-${index}`} src={src} alt={english ? "Photo of the artist" : "Фото автора"} />
+        ))}
       </section>
     </main>
   );

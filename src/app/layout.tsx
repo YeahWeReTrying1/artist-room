@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { StrokeLoader } from "@/components/StrokeLoader";
+import { ArtistLanguage } from "@/components/ArtistLanguage";
 import { getLoader } from "@/lib/storage";
 
 const siteBasePath = (process.env.NEXT_PUBLIC_BASE_PATH || "").replace(/\/$/, "");
@@ -45,7 +46,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
       <body>
         <StrokeLoader loader={loader} storageKey="bobkov-loader-artist" />
-        {children}
+        <ArtistLanguage>{children}</ArtistLanguage>
       </body>
     </html>
   );

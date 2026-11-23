@@ -1,8 +1,17 @@
 import { notFound } from "next/navigation";
+import type { Viewport } from "next";
 import { ArtistProjectPageClient } from "@/components/ArtistProjectPageClient";
 import { canOpenProject } from "@/lib/projectAccess";
 import { mapProjectForSite } from "@/lib/siteAssets";
 import { getProjects } from "@/lib/storage";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#000000",
+  colorScheme: "dark"
+};
 
 type Props = {
   params: Promise<{ slug: string }>;

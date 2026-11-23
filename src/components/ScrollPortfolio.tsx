@@ -1,5 +1,8 @@
 "use client";
 import { useEffect, useRef, useState, useMemo, useCallback, memo, type CSSProperties } from "react";
+import Link from "next/link";
+import { useArtistLanguage } from "@/components/ArtistLanguage";
+import { artistText } from "@/lib/artistTranslations";
 import type { AboutData, Project } from "@/lib/types";
 import { ArtistProjectOverlay } from "@/components/ArtistProjectOverlay";
 import { ArtistImage } from "@/components/ArtistImage";
@@ -10,6 +13,8 @@ import { getProjectGallery } from "@/lib/projectAccess";
 import { scrollFrames, frameImageProps } from "@/lib/scrollFrames";
 const palettes=[['#c5c7d5','#faedf0'],['#d3cfc3','#edf8e8'],['#c2d5c5','#eee5ff']];
 const ScrollWork = memo(function ScrollWork({project,index,x,width,y,travel,onOpen}:{project:Project;index:number;x:number;width:number;y:number;travel:number;onOpen:(project:Project)=>void}){
+ const { language } = useArtistLanguage();
+ const title = artistText(project.title, language);
  const parts=(project.artistAspect||'').split('/').map(Number);
  const ratio=parts.length===2&&parts.every(n=>Number.isFinite(n)&&n>0)?parts[0]/parts[1]:null;
  const photos=useMemo(()=>{
@@ -37,11 +42,20 @@ const ScrollWork = memo(function ScrollWork({project,index,x,width,y,travel,onOp
   const timer=window.setTimeout(()=>{const src=frames[frame+1];if(src){const image=new Image();image.decoding='async';image.fetchPriority='low';image.sizes=`${width}vw`;if(photoSequence){warmMedia(src);}else{image.srcset=frameImageProps(src).srcSet;image.src=src;}}},200);
   return()=>clearTimeout(timer);
  },[frame,near,project.id,width,photoSequence]);
- return <button className="horizontalArtwork" style={{left:`${x}vw`,width:`${width}vw`,top:`${centerY}%`,height:ratio?`min(${width/(ratio||1)}vw, 84svh)`:`${height}svh`,...(ratio?{width:`min(${width}vw, ${84*ratio}svh)`,aspectRatio:String(ratio),'--art-fit':'cover'}:{}),transform,opacity:1-Math.pow(entry,3),transformOrigin:`${index%2?'20%':'80%'} ${direction<0?'100%':'0%'}` } as CSSProperties} onClick={()=>onOpen(project)} onPointerEnter={()=>warmMedia(project.media[0]?.src||project.preview)} aria-label={project.title?`Открыть проект: ${project.title}`:`Открыть работу ${index+1}`}>
- {near && (photoSequence ? <ArtistImage src={frames[frame]} alt={project.title||'Рисунок'} loading="eager" fetchPriority={index===0?"high":"auto"} sizes={`${width}vw`}/> : frames.length ? <img {...frameImageProps(frames[frame])} sizes={`${width}vw`} fetchPriority={index===0?"high":"low"} alt={project.title||'Рисунок'} decoding="async" loading={index===0?'eager':'lazy'}/> : <span className="previewUnavailable">Добавьте фотографии в проект</span>)}
+ return <button className="horizontalArtwork" style={{left:`${x}vw`,width:`${width}vw`,top:`${centerY}%`,height:ratio?`min(${width/(ratio||1)}vw, 84svh)`:`${height}svh`,...(ratio?{width:`min(${width}vw, ${84*ratio}svh)`,aspectRatio:String(ratio),'--art-fit':'cover'}:{}),transform,opacity:1-Math.pow(entry,3),transformOrigin:`${index%2?'20%':'80%'} ${direction<0?'100%':'0%'}` } as CSSProperties} onClick={()=>onOpen(project)} onPointerEnter={()=>warmMedia(project.media[0]?.src||project.preview)} aria-label={language === "en" ? (title ? `Open project: ${title}` : `Open artwork ${index+1}`) : (title ? `Открыть проект: ${title}` : `Открыть работу ${index+1}`)}>
+ {near && (photoSequence ? <ArtistImage src={frames[frame]} alt={title || (language === 'en' ? 'Artwork' : 'Рисунок')} loading="eager" fetchPriority={index===0?"high":"auto"} sizes={`${width}vw`}/> : frames.length ? <img {...frameImageProps(frames[frame])} sizes={`${width}vw`} fetchPriority={index===0?"high":"low"} alt={title || (language === 'en' ? 'Artwork' : 'Рисунок')} decoding="async" loading={index===0?'eager':'lazy'}/> : <span className="previewUnavailable">{language === 'en' ? 'Preview unavailable' : 'Нет превью'}</span>)}
  </button>;
 });
-export function ScrollPortfolio({projects,about}:{projects:Project[];about:AboutData}){
+export function ScrollPortfolio({projects:orderedProjects,about}:{projects:Project[];about:AboutData}){
+ const { language, toggleLanguage } = useArtistLanguage();
+ const english = language === "en";
+ const [latestFirst, setLatestFirst] = useState(false);
+ const projects = useMemo(() => latestFirst ? [...orderedProjects].reverse() : orderedProjects, [latestFirst, orderedProjects]);
+ function toggleOrder() {
+  window.scrollTo({ top: 0, behavior: "instant" });
+  setProgress(0);
+  setLatestFirst(previous => !previous);
+ }
  const root=useRef<HTMLElement>(null);const manuscript=useRef<HTMLDivElement>(null);const [active,setActive]=useState<Project|null>(null);const [progress,setProgress]=useState(0);const [mobile,setMobile]=useState(false);
  useEffect(()=>{const query=matchMedia('(max-width:700px)');const update=()=>setMobile(query.matches);update();query.addEventListener('change',update);return()=>query.removeEventListener('change',update);},[]);
  const openProject=useCallback((project:Project)=>setActive(project),[]);
@@ -108,8 +122,12 @@ export function ScrollPortfolio({projects,about}:{projects:Project[];about:About
  },[distance,timeline]);
  return <main ref={root} className={`scrollPortfolio horizontalPortfolio${active?' isProjectOpen':''}`} style={{height:`calc(100svh + ${timeline.length}vw)`}}><div className="scrollBackdrop" aria-hidden="true"><div ref={manuscript} className="scrollManuscript">{['01','02','03','04'].map(n=><div key={n} className="scrollManuscriptSheet" style={{maskImage:`url("${publicUrl('/scroll-text/'+n+'.svg')}")`,WebkitMaskImage:`url("${publicUrl('/scroll-text/'+n+'.svg')}")`}}/>)}</div></div>
  <div className="horizontalStage"><div className="horizontalTrack" style={{transform:`translate3d(${-progress*distance}vw,0,0)`}}>{projects.map((project,index)=><ScrollWork key={project.id} project={project} index={index} {...layout[index]} travel={progress*distance} onOpen={openProject}/>)}</div></div>
- <nav className="scrollLinks" aria-label="Контакты">{about.links?.map(link=><a key={link.href} href={link.href} target="_blank" rel="noreferrer">{link.label}</a>)}</nav>
- <a className="scrollSignature" href="#" aria-label="В начало">{about.logo&&/\.svg$/i.test(about.logo)?<span className="scrollSignatureMask" style={{maskImage:`url("${about.logo}")`,WebkitMaskImage:`url("${about.logo}")`}}/>:about.logo?<img src={about.logo} alt="Бобков"/>:<SiteLogo/>}</a>
+ <nav className="scrollLinks" aria-label={english ? "Portfolio" : "Портфолио"}>
+  <Link href="/about">{english ? "About me" : "Кто я"}</Link>
+  <button type="button" onClick={toggleLanguage} aria-label={english ? "Переключить на русский" : "Switch to English"}>{english ? "RU" : "EN"}</button>
+  <button type="button" aria-pressed={latestFirst} onClick={toggleOrder}>{english ? "Latest first" : "Сначала новые"}</button>
+ </nav>
+ <a className="scrollSignature" href="#" aria-label={english ? "Back to start" : "В начало"}>{about.logo&&/\.svg$/i.test(about.logo)?<span className="scrollSignatureMask" style={{maskImage:`url("${about.logo}")`,WebkitMaskImage:`url("${about.logo}")`}}/>:about.logo?<img src={about.logo} alt="Бобков"/>:<SiteLogo/>}</a>
  {active&&<ArtistProjectOverlay project={active} onClose={()=>setActive(null)}/>}
  </main>;
 }
